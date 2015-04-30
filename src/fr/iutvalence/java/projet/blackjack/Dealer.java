@@ -20,6 +20,9 @@ public class Dealer
 		
 	}
 	
+	/**
+	 * deal the dealer's hand
+	 */
 	public void dealDealersHand()
 	{
 		
