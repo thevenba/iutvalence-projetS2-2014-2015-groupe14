@@ -22,7 +22,7 @@ public class BlackjackLauncher
 	/**
 	 * Where the application starts.
 	 * 
-	 * @param args not used
+	 * @param args not used.
 	 */
 	public static void main(String[] args)
 	{
