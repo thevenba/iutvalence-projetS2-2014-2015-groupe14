@@ -27,6 +27,8 @@ public class BlackjackLauncher
 	public static void main(String[] args)
 	{
 		Player player = new Player();
+		System.out.println("J'ai reçu une nouvelle carte : " +player.hit());
+		System.out.println("J'ai reçu une nouvelle carte : " +player.hit());
 	}
 
 }

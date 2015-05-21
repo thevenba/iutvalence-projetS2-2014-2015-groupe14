@@ -3,8 +3,10 @@
  */
 package fr.iutvalence.java.projet.blackjack;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 
 /**
  * @author thevenba
@@ -26,7 +28,7 @@ public class Player
 	/** */
 	private int insurance;
 	
-	private List<Card> hand;
+	public Set<Card> hand;
 	/**
 	 * 
 	 */
@@ -35,7 +37,7 @@ public class Player
 		this.budget = Player.BUDGET_DEFAULT;
 		this.bet = Player.BET_DEFAULT;
 		this.insurance = Player.INSURANCE_DEFAULT;
-		this.hand = new LinkedList<>();
+		this.hand = new HashSet<>();
 	}
 
 	/**
@@ -46,7 +48,7 @@ public class Player
 		this.budget = budget;
 		this.bet = Player.BET_DEFAULT;
 		this.insurance = Player.INSURANCE_DEFAULT;
-		this.hand = new LinkedList<>();
+		this.hand = new HashSet<>();
 	}
 
 	/**
@@ -71,10 +73,10 @@ public class Player
 		this.hit();
 	}
 	
-	public void hit()
+	public boolean hit()
 	{
 		/* TODO remplacer par générateur aléatoir */
-		this.hand.add(new Card(Suit.SPADES, Rank.JACK));
+		return this.hand.add(new Card(Suit.SPADES, Rank.JACK));
 	}
 	
 	public void doubleDown()
