@@ -3,6 +3,9 @@
  */
 package fr.iutvalence.java.projet.blackjack;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * Launch a game.
  * 
@@ -27,6 +30,9 @@ public class BlackjackLauncher
 	public static void main(String[] args)
 	{
 		Player player = new Player();
+		Dealer dealer = new Dealer();
+		Deck deck = new Deck();
+		Round round = new Round(player, dealer, deck);
+		round.startRound();
 	}
-
 }

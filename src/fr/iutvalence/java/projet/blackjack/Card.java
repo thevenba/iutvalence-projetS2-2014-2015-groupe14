@@ -39,6 +39,17 @@ public class Card
 		else
 			this.rank.setValue(1);
 	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return "Card [suit=" + suit + ", rank=" + rank + "]";
+	}
+	
+	
 	
 }
 	

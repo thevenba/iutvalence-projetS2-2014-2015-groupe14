@@ -6,9 +6,6 @@ package fr.iutvalence.java.projet.blackjack;
 import java.util.LinkedList;
 import java.util.List;
 
-
-
-
 /**
  * @author thevenba
  *
@@ -47,22 +44,19 @@ public class Player
 	}
 
 	/**
-	 * @param budget
-	 */
-	public Player(int budget)
-	{
-		this.budget = budget;
-		this.bet = Player.BET_DEFAULT;
-		this.insurance = Player.INSURANCE_DEFAULT;
-		this.hand = new LinkedList<>();
-	}
-
-	/**
 	 * @return the bet
 	 */
 	public int getBet()
 	{
 		return this.bet;
+	}
+
+	/**
+	 * @param bet the bet to set
+	 */
+	public void resetBet()
+	{
+		this.bet = Player.BET_DEFAULT;
 	}
 
 	/**
@@ -120,6 +114,24 @@ public class Player
 		this.budget = this.budget - Player.BET_FIVE_HUNDRED;
 	}
 	
+	/**
+	 * @return the budget
+	 */
+	public int getBudget()
+	{
+		return budget;
+	}
+
+	public void setBudget(int bet)
+	{
+		this.budget += bet;
+	}
+	
+	public void resetHand()
+	{
+		this.hand = new LinkedList<>();
+	}
+	
 	public void deal(Deck deck)
 	{
 		this.hit(deck);
@@ -139,5 +151,24 @@ public class Player
 		this.bet = this.bet*2;
 		this.hit(deck);
 	}
+
+	public int reckonScore()
+	{
+		int score = 0;
+		for (int cardIndex = 0; cardIndex < this.hand.size(); cardIndex++)
+			score += this.hand.get(cardIndex).getRank().getValue();
+		return score;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return "Player [budget=" + budget + ", bet=" + bet + ", hand=" + hand
+				+ "]";
+	}
+	
 	
 }
