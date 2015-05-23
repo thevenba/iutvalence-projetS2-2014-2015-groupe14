@@ -3,9 +3,10 @@
  */
 package fr.iutvalence.java.projet.blackjack;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.LinkedList;
+import java.util.List;
+
+
 
 
 /**
@@ -33,7 +34,7 @@ public class Player
 	/** */
 	private int insurance;
 	
-	public Set<Card> hand;
+	public List<Card> hand;
 	/**
 	 * 
 	 */
@@ -42,7 +43,7 @@ public class Player
 		this.budget = Player.BUDGET_DEFAULT;
 		this.bet = Player.BET_DEFAULT;
 		this.insurance = Player.INSURANCE_DEFAULT;
-		this.hand = new HashSet<>();
+		this.hand = new LinkedList<>();
 	}
 
 	/**
@@ -53,7 +54,7 @@ public class Player
 		this.budget = budget;
 		this.bet = Player.BET_DEFAULT;
 		this.insurance = Player.INSURANCE_DEFAULT;
-		this.hand = new HashSet<>();
+		this.hand = new LinkedList<>();
 	}
 
 	/**
@@ -119,25 +120,24 @@ public class Player
 		this.budget = this.budget - Player.BET_FIVE_HUNDRED;
 	}
 	
-	public void deal()
+	public void deal(Deck deck)
 	{
-		this.hit();
-		this.hit();
+		this.hit(deck);
+		this.hit(deck);
 	}
 	
-	public boolean hit()
+	public void hit(Deck deck)
 	{
-		/* TODO remplacer par générateur aléatoir */
-		return this.hand.add(new Card(Suit.SPADES, Rank.JACK));
+		this.hand.add(deck.randomCard());
 	}
 	
-	public void doubleDown() throws BudgetNotEnoughException
+	public void doubleDown(Deck deck) throws BudgetNotEnoughException
 	{
 		if (this.budget < this.bet)
 			throw new BudgetNotEnoughException("Your budget is not high enough");
 		this.budget = this.budget - this.bet;
 		this.bet = this.bet*2;
-		this.hit();
+		this.hit(deck);
 	}
 	
 }
