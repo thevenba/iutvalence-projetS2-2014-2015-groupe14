@@ -11,3 +11,10 @@ A votre loisir donc :
 - je ne pense pas qu'il soit judicieux Ã©galement de commencer le Swing...
 
 ENJOY !
+
+Edit du 24/05 Par Benjamin :
+
+Ajout de commentaires sur toutes les classes sauf Round.java
+Normalement le bug a été corrigé par baptiste ou tout du moins la source a été identifiée : une méthode non finie. Donc voilà
+ENJOY !!
+

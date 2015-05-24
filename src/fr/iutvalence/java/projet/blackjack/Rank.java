@@ -5,7 +5,7 @@ package fr.iutvalence.java.projet.blackjack;
 
 /**
  * @author thevenba
- *
+ * The enumeration of all Rank's cards
  */
 public enum Rank
 {
@@ -36,14 +36,17 @@ public enum Rank
 	
 	TWO(2);
 	
+	/** The value of a card */
 	private int value;
 	
+	/** Constructor of Rank*/
 	private Rank(int value)
 	{
 		this.setValue(value);
 	}
 
 	/**
+	 * Take the value of the card
 	 * @return the value
 	 */
 	public int getValue()
@@ -53,6 +56,7 @@ public enum Rank
 
 	/**
 	 * @param value the value to set
+	 * Take the value of this card
 	 */
 	public void setValue(int value)
 	{

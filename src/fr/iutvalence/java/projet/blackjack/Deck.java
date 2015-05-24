@@ -9,13 +9,18 @@ import java.util.List;
 
 /**
  * @author thevenba
- *
+ * The deck of game
  */
 public class Deck
 {
-
+	/**
+	 * List of cards
+	 */
 	private List<Card> cards;
 	
+	/**
+	 * Constuctor of the deck
+	 */
 	public Deck()
 	{
 		this.cards = new ArrayList<>();
@@ -73,6 +78,10 @@ public class Deck
 		this.cards.add(new Card(Suit.SPADES, Rank.TWO));
 	}
 	
+	/**
+	 *  Give a random card
+	 * @return a random card
+	 */
 	public Card randomCard()
 	{
 		Collections.shuffle(cards);

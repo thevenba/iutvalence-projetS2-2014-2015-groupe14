@@ -5,7 +5,7 @@ package fr.iutvalence.java.projet.blackjack;
 
 /**
  * @author thevenba
- *
+ * Representation of all cards.
  */
 public class Card
 {
@@ -28,7 +28,7 @@ public class Card
 	
 	/**
 	 * @throws InvalidAceException 
-	 * 
+	 *  Switch the Ace's value or an exception if the player doesn't have Ace.
 	 */
 	public void switchAceValue() throws InvalidAceException
 	{
