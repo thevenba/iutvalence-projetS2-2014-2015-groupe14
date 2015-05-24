@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class Player
 {
-	/**	*/
+	/** The budget by default 	*/
 	public static final int BUDGET_DEFAULT = 1000;
 	/** */
 	public static final int BET_DEFAULT = 0;
