@@ -3,9 +3,6 @@
  */
 package fr.iutvalence.java.projet.blackjack;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 /**
  * Launch a game.
  * 

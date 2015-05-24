@@ -6,6 +6,10 @@ package fr.iutvalence.java.projet.blackjack;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+/** TODO Rendre l'appel a double possible uniquement si il s'agit du premier choix
+ * il n'est plus possible de double après avoir hit
+ */
+
 /**
  * @author thevenba
  *
@@ -240,6 +244,7 @@ public class Round
 					} catch (BudgetNotEnoughException e2)
 					{
 						e2.printStackTrace();
+						cardChoice();
 					}
 					break;
 				default:
@@ -253,7 +258,7 @@ public class Round
 			}
 			if ((choice == 1 || choice == 3))
 			{
-				return;
+				break;
 			}
 		}
 	}
