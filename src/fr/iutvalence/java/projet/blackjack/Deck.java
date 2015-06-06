@@ -71,11 +71,11 @@ public class Deck
 		this.cards.add(new Card(Suit.SPADES, Rank.FOUR));
 		this.cards.add(new Card(Suit.SPADES, Rank.THREE));
 		this.cards.add(new Card(Suit.SPADES, Rank.TWO));
+		Collections.shuffle(cards);
 	}
 	
 	public Card randomCard()
 	{
-		Collections.shuffle(cards);
-		return this.cards.remove(0);
+		return this.cards.remove(this.cards.size()-1);
 	}
 }

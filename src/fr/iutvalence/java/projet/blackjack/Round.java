@@ -6,8 +6,7 @@ package fr.iutvalence.java.projet.blackjack;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/** TODO Rendre l'appel a double possible uniquement si il s'agit du premier choix
- * il n'est plus possible de double après avoir hit
+/** TODO A remplacer par une 'vraie' IHM
  */
 
 /**
@@ -52,6 +51,7 @@ public class Round
 		else if (this.player.reckonScore() == this.dealer.reckonScore())
 		{
 			/* TODO egalite */
+			System.out.println("Egalité");
 		}
 		else
 			busting();
