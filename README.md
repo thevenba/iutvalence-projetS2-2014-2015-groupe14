@@ -1,13 +1,13 @@
 # iutvalence-projetS2-2014-2015-groupe14
 De : Baptiste
 
-Vu l'avance que je viens de creuser (je pense), je vous recommande de reprendre (commencer) votre travail à partir de mon dernier commit (branch master). Comme vous le verrez, le jeu est plutôt en bonne voie et est fonctionnel même si il manque quelques fonctionnalitées (assurance et split) et bien sur la partie swing (visuel). En plus du bug évoqué dans le commit "The game is playable right now ! The open beta is upon us !", j'ai pu faire apparaitre un bug comme cela : après le "deal", je possédais un KING and une QUEEN (un score de 20), j'ai donc décidé logiquement de "stand" (de m'arreter), et la surpirse, le jeu s'est arreté aussi...je n'ai pas vérifié si "stand" plantait le jeux à chaque fois (j'ai ragequit).
+/ ! \ ATTENTION : le jeu a encore pas mal changé, on ne plus jouer à present, car après ces changements, la classe Round (qui correspondait à une classe IHM console) ne fonctionne plus du tout (et c'est NORMAL). On peut considéré que le jeu "moteur" est quasi-terminé.
 
-A votre loisir donc :
-- de tester le jeu, de l'éprouver pour en dénicher des bugs
-- de corriger les bugs déjà trouvés ou que vous trouverez vous même 
-- d'avancer les méthodes assurance et split
-- je ne pense pas qu'il soit judicieux pour l'instant d'essayer de créer une partie avec plusieurs joueurs, commencons par faire un jeu fonctionnel avec un seul
-- je ne pense pas qu'il soit judicieux également de commencer le Swing...
+Que faire :
+- reprendre la classe Round pour l'adapter au nouveau model MAIS
+- je pense que ce serait une perte de temps car il y a trop de règle rebarbatives à mettre en place en IHM console...
+- vous l'avez compris, il est plus judicieux de commencer directement l'IHM en swing...
+- -> commencer l'IHM en swing
+- je ne pense pas qu'il soit judicieux pour l'instant d'essayer de crÃ©er une partie avec plusieurs joueurs, commencons par faire un jeu fonctionnel avec un seul
 
 ENJOY !
