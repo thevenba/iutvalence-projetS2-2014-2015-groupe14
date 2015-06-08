@@ -11,5 +11,5 @@ import javax.swing.JPanel;
  */
 public class PlayerControl extends JPanel
 {
-	private 
+
 }
