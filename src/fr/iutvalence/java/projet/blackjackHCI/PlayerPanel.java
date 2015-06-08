@@ -1,7 +1,7 @@
 /**
  * 
  */
-package fr.iutvalence.java.projet.blackjack;
+package fr.iutvalence.java.projet.blackjackHCI;
 
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;

@@ -1,11 +1,15 @@
 /**
  * 
  */
-package fr.iutvalence.java.projet.blackjack;
+package fr.iutvalence.java.projet.blackjackHCI;
 
 import javax.swing.JFrame;
 import javax.swing.JSplitPane;
 import javax.swing.WindowConstants;
+
+import fr.iutvalence.java.projet.blackjack.Dealer;
+import fr.iutvalence.java.projet.blackjack.Deck;
+import fr.iutvalence.java.projet.blackjack.Player;
 
 /**
  * @author thevenba

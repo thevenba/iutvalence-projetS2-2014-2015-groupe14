@@ -5,6 +5,8 @@ package fr.iutvalence.java.projet.blackjack;
 
 import javax.swing.SwingUtilities;
 
+import fr.iutvalence.java.projet.blackjackHCI.DisplayTask;
+
 /**
  * Launch a game.
  * 

@@ -71,6 +71,8 @@ public class Hand
 		this.cards.add(deck.randomCard());
 	}
 	
+	
+	/* TODO changement as automatique */
 	public int reckonScore()
 	{
 		int score = 0;
