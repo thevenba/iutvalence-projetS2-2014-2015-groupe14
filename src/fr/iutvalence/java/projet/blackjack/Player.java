@@ -102,6 +102,14 @@ public class Player
 		this.budget += reward;
 	}
 	
+	/**
+	 * @return the mainHand
+	 */
+	public Hand getMainHand()
+	{
+		return mainHand;
+	}
+
 	public void resetHand()
 	{
 		this.mainHand = new Hand();
