@@ -13,8 +13,6 @@ public class Player
 	public static final int BUDGET_DEFAULT = 1000;
 	/** */
 	public static final int INSURANCE_DEFAULT = 0;
-	/** */
-	public final static boolean SPLIT_DEFAULT = false;
 
 	/** */
 	private int budget;
@@ -25,7 +23,6 @@ public class Player
 	/** */
 	private Hand subHand;
 	/** */
-	private boolean split;
 	
 	/**
 	 * 
@@ -36,7 +33,6 @@ public class Player
 		this.insurance = Player.INSURANCE_DEFAULT;
 		this.mainHand = new Hand();
 		this.subHand = new Hand();
-		this.split = SPLIT_DEFAULT;
 	}
 
 	/**
@@ -192,7 +188,6 @@ public class Player
 		this.mainHand.removeCard(1);
 		if (this.insurance != 0)
 			this.insurance = this.insurance + this.subHand.getBet()/2;
-		this.split = true;
 	}
 	
 	/**
@@ -202,14 +197,7 @@ public class Player
 	{
 		this.insurance = this.mainHand.getBet()/2 + this.subHand.getBet()/2;
 	}
-	
-	/**
-	 * @return split if the hand is split
-	 */
-	public boolean getSplit(){
-		return this.split;
-	}
-	
+		
 	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
