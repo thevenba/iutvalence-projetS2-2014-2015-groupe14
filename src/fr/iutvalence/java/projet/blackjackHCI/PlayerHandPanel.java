@@ -4,9 +4,11 @@
 package fr.iutvalence.java.projet.blackjackHCI;
 
 import java.awt.Panel;
+import java.util.List;
 
 import javax.swing.JButton;
 
+import fr.iutvalence.java.projet.blackjack.Card;
 import fr.iutvalence.java.projet.blackjack.Hand;
 import fr.iutvalence.java.projet.blackjack.Player;
 
@@ -14,27 +16,33 @@ import fr.iutvalence.java.projet.blackjack.Player;
  * @author duboitho
  *
  */
-public class HandPanel extends Panel
+public class PlayerHandPanel extends Panel
 {
 	
 	private Player player;
 	
 	private boolean test;
 	
+	private List<Card> hand;
+	private List<Card> subHand;
 	
-	public HandPanel(Player player)
+	
+	public PlayerHandPanel(Player player)
 	{
 		this.player=player;
 		
 		if(this.player.getSplit())
 		{
-			for(int i=0;i<2/*TODO change 11 to the number of card in the hand+1 */;i++)
+			this.hand=this.player.getMainHand().getCards();
+			this.subHand=this.player.getSubHand().getCards();
+			
+			for(int i=0;i<hand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);
 				button.setEnabled(false);
 			}
-			for(int i=0;i<2;i++)
+			for(int i=0;i<subHand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getSubHand().getCards().get(i));
 				this.add(button);
@@ -43,7 +51,9 @@ public class HandPanel extends Panel
 		}
 		else
 		{
-			for(int i=0;i<2;i++)
+			this.hand=this.player.getMainHand().getCards();
+			
+			for(int i=0;i<hand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);

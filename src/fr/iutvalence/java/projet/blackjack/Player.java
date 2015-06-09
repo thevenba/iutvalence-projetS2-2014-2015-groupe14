@@ -99,7 +99,7 @@ public class Player
 	 */
 	public int getBudget()
 	{
-		return budget;
+		return this.budget;
 	}
 
 	/**

@@ -16,11 +16,11 @@ import fr.iutvalence.java.projet.blackjack.Player;
 public class PlayerDisplay extends JPanel
 {
 	private BetAndBudgetPanel betAndBudgetPanel;
-	private HandPanel handPanel;
+	private PlayerHandPanel handPanel;
 	private JSplitPane separator;
 	
 	public PlayerDisplay(Player player){
-		this.handPanel = new HandPanel(player);
+		this.handPanel = new PlayerHandPanel(player);
 		this.betAndBudgetPanel = new BetAndBudgetPanel(player);
 		JSplitPane separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.betAndBudgetPanel,this.handPanel);
 		this.separator.setEnabled(false);
