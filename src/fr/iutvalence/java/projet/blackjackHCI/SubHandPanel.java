@@ -36,7 +36,7 @@ public class SubHandPanel extends JPanel
 		}
 	}
 	
-	public void refreshPlayerHand(){
+	public void refreshPlayerSubHand(){
 		this.subHand=this.player.getSubHand().getCards();
 		this.subButton.setText(""+this.player.getSubHand().getCards().get(subHand.size()));
 		this.add(subButton);

@@ -36,7 +36,7 @@ public class MainHandPanel extends JPanel
 		}
 	}
 	
-	public void refreshPlayerHand(){
+	public void refreshPlayerSubHand(){
 		this.mainHand=this.player.getMainHand().getCards();
 		this.mainButton.setText(""+this.player.getMainHand().getCards().get(mainHand.size()));
 		this.add(mainButton);
