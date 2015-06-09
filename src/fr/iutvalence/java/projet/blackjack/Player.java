@@ -94,7 +94,7 @@ public class Player
 	 */
 	public int getBudget()
 	{
-		return budget;
+		return this.budget;
 	}
 
 	public void setBudget(int reward)
@@ -107,7 +107,15 @@ public class Player
 	 */
 	public Hand getMainHand()
 	{
-		return mainHand;
+		return this.mainHand;
+	}
+	
+	/**
+	* @return subHand the sub hand
+	*/
+	public Hand getSubHand()
+	{
+		return this.subHand;
 	}
 
 	public void resetHand()
@@ -169,8 +177,7 @@ public class Player
 	@Override
 	public String toString()
 	{
-		return "Player [budget=" + budget + ", insurance=" + insurance
-				+ ", mainHand=" + mainHand + ", subHand=" + subHand + "]";
+		return "Player [budget=" + this.budget + ", insurance=" + this.insurance + ", mainHand=" + this.mainHand + ", subHand=" + this.subHand + "]";
 	}
 	
 	

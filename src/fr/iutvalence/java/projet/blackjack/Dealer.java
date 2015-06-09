@@ -46,5 +46,9 @@ public class Dealer
 		return "Dealer [hand=" + hand + "]";
 	}
 	
+	public List<Card> getHand()
+	{
+		return this.hand;
+	}
 	
 }
