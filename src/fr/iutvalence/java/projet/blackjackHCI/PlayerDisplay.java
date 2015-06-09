@@ -3,6 +3,9 @@
  */
 package fr.iutvalence.java.projet.blackjackHCI;
 
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 
@@ -20,12 +23,18 @@ public class PlayerDisplay extends JPanel
 	private JSplitPane separator;
 	
 	public PlayerDisplay(Player player){
+		GridLayout layout= new GridLayout(2,1);
+		this.setLayout(layout);
 		this.handPanel = new PlayerHandPanel(player); 
 		this.betAndBudgetPanel = new BetAndBudgetPanel(player);
+		handPanel.setSize(500, 500);
+		this.add(betAndBudgetPanel);
+		this.add(handPanel);
+/*
 		this.separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.betAndBudgetPanel,this.handPanel);
 		this.separator.setEnabled(false);
 		this.separator.setResizeWeight(0.1);
-		this.add(this.separator);
+		this.add(this.separator);*/
 	}
 
 	/**

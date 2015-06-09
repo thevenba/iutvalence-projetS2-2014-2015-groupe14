@@ -1,5 +1,7 @@
 package fr.iutvalence.java.projet.blackjackHCI;
 
+import java.awt.GridLayout;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -21,6 +23,8 @@ public class BetAndBudgetPanel extends JPanel
 	 * @param player the Player
 	 */
 	public BetAndBudgetPanel(Player player){
+		GridLayout layout = new GridLayout(2, 2);
+		this.setLayout(layout);
 		this.player = player;
 		JLabel betLabel = new JLabel("Bet : ");
 		this.betSumLabel.setText(""+this.player.getMainHand().getBet());

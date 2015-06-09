@@ -3,6 +3,7 @@
  */
 package fr.iutvalence.java.projet.blackjackHCI;
 
+import java.awt.GridLayout;
 import java.awt.Panel;
 import java.util.List;
 
@@ -32,7 +33,7 @@ public class PlayerHandPanel extends Panel
 		
 		this.player = player;
 		this.subHand=this.player.getSubHand().getCards();
-				
+
 		if(this.subHand.size() > 0)
 		{
 			this.mainHandPanel = new MainHandPanel(player,true);
