@@ -47,6 +47,23 @@ public class PlayerHandPanel extends Panel
 			this.mainHandPanel = new MainHandPanel(player);
 		}
 	}
+
+	/**
+	 * @return the mainHandPanel
+	 */
+	public MainHandPanel getMainHandPanel()
+	{
+		return mainHandPanel;
+	}
+
+	/**
+	 * @return the subHandPanel
+	 */
+	public SubHandPanel getSubHandPanel()
+	{
+		return subHandPanel;
+	}
+	
 	
 
 	

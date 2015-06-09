@@ -27,5 +27,21 @@ public class PlayerDisplay extends JPanel
 		this.separator.setResizeWeight(0.1);
 		this.add(this.separator);
 	}
+
+	/**
+	 * @return the betAndBudgetPanel
+	 */
+	public BetAndBudgetPanel getBetAndBudgetPanel()
+	{
+		return betAndBudgetPanel;
+	}
+
+	/**
+	 * @return the handPanel
+	 */
+	public PlayerHandPanel getHandPanel()
+	{
+		return handPanel;
+	}
 }
 
