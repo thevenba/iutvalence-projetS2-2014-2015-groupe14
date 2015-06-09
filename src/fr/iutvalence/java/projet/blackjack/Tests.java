@@ -17,6 +17,7 @@ public class Tests extends TestCase {
 	}
 	
 	public void testAce() throws InvalidAceException {
+		Card c1 = new Card(CLUBS, ACE);
 		
 	}
 	
