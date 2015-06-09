@@ -23,20 +23,20 @@ public class PlayerHandPanel extends Panel
 	
 	private boolean test;
 	
-	private List<Card> hand;
+	private List<Card> mainHand;
 	private List<Card> subHand;
 	
 	
 	public PlayerHandPanel(Player player)
 	{
 		this.player=player;
+		this.mainHand=this.player.getMainHand().getCards();	
+		this.subHand=this.player.getSubHand().getCards();
 		
-		if()
+		if(this.subHand.size() != 0)
 		{
-			this.hand=this.player.getMainHand().getCards();
-			this.subHand=this.player.getSubHand().getCards();
-			
-			for(int i=0;i<hand.size();i++)
+					
+			for(int i=0;i<mainHand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);
@@ -50,10 +50,8 @@ public class PlayerHandPanel extends Panel
 			}
 		}
 		else
-		{
-			this.hand=this.player.getMainHand().getCards();
-			
-			for(int i=0;i<hand.size();i++)
+		{			
+			for(int i=0;i<mainHand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);
