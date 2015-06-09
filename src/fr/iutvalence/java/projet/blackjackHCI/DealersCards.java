@@ -33,4 +33,11 @@ public class DealersCards extends JPanel
 			button.setEnabled(false);
 		}
 	}
+	
+	public void refreshDealersHand(Dealer dealer){
+		this.dealer = dealer;
+		this.hand=this.dealer.getHand();
+		JButton button = new JButton(""+this.dealer.getHand().get(hand.size()));
+		this.add(button);
+	}
 }

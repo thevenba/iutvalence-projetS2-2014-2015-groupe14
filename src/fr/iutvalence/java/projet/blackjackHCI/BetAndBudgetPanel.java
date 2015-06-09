@@ -13,6 +13,8 @@ public class BetAndBudgetPanel extends JPanel
 {
 	/** player the Player*/
 	private Player player;
+	private JLabel betSumLabel = new JLabel();
+	private JLabel budgetSumLabel = new JLabel();
 	
 	/**
 	 * the constructor of BetAndSBudgetPanel
@@ -21,12 +23,17 @@ public class BetAndBudgetPanel extends JPanel
 	public BetAndBudgetPanel(Player player){
 		this.player = player;
 		JLabel betLabel = new JLabel("Bet : ");
-		JLabel betSumLabel = new JLabel(""+this.player.getMainHand().getBet());
+		this.betSumLabel.setText(""+this.player.getMainHand().getBet());
 		JLabel budgetLabel = new JLabel("Budget : ");
-		JLabel budgetSumLabel = new JLabel(""+this.player.getBudget());
+		this.budgetSumLabel.setText(""+this.player.getBudget());
 		this.add(betLabel);
 		this.add(betSumLabel);
 		this.add(budgetLabel);
 		this.add(budgetSumLabel);
+	}
+	
+	public void refresh(){
+		this.betSumLabel.setText(""+this.player.getMainHand().getBet());
+		this.budgetSumLabel.setText(""+this.player.getBudget());
 	}
 }

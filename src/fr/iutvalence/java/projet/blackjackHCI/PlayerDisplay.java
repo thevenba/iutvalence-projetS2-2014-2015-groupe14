@@ -28,3 +28,4 @@ public class PlayerDisplay extends JPanel
 		this.add(this.separator);
 	}
 }
+

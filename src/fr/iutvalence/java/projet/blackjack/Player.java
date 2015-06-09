@@ -107,12 +107,12 @@ public class Player
 	}
 	
 	/**
-
+<<<<<<< HEAD
 	 * @return mainHand the main hand
 	 */
 	public Hand getMainHand()
 	{
-		return this.mainHand;
+	return this.mainHand;
 	}
 	
 	/**
@@ -120,7 +120,7 @@ public class Player
 	 */
 	public Hand getSubHand()
 	{
-		return this.subHand;
+	return this.subHand;
 	}
 	
 	/**
@@ -129,7 +129,6 @@ public class Player
 	public void resetHand()
 	{
 		this.mainHand = new Hand();
-		this.subHand = new Hand();
 	}
 	
 	/**
@@ -199,4 +198,17 @@ public class Player
 	{
 		this.insurance = this.mainHand.getBet()/2 + this.subHand.getBet()/2;
 	}
+		
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+		return "Player [budget=" + this.budget + ", insurance=" + this.insurance
+				+ ", mainHand=" + this.mainHand + ", subHand=" + this.subHand + "]";
+	}
+	
+	
 }

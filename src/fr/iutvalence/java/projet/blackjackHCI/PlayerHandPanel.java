@@ -7,8 +7,10 @@ import java.awt.Panel;
 import java.util.List;
 
 import javax.swing.JButton;
+import javax.swing.JSplitPane;
 
 import fr.iutvalence.java.projet.blackjack.Card;
+import fr.iutvalence.java.projet.blackjack.Dealer;
 import fr.iutvalence.java.projet.blackjack.Hand;
 import fr.iutvalence.java.projet.blackjack.Player;
 
@@ -19,45 +21,33 @@ import fr.iutvalence.java.projet.blackjack.Player;
 public class PlayerHandPanel extends Panel
 {
 	
-	private Player player;
-	
-	private boolean test;
-	
-	private List<Card> mainHand;
 	private List<Card> subHand;
-	
+	private Player player;
+	private JSplitPane separator;
+	private MainHandPanel mainHandPanel;
+	private SubHandPanel subHandPanel;
 	
 	public PlayerHandPanel(Player player)
 	{
-		this.player=player;
-		this.mainHand=this.player.getMainHand().getCards();	
-		this.subHand=this.player.getSubHand().getCards();
 		
-		if(this.subHand.size() != 0)
+		this.player = player;
+		this.subHand=this.player.getSubHand().getCards();
+				
+		if(this.subHand.size() > 0)
 		{
-					
-			for(int i=0;i<mainHand.size();i++)
-			{
-				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
-				this.add(button);
-				button.setEnabled(true);
-			}
-			for(int i=0;i<subHand.size();i++)
-			{
-				JButton button = new JButton(""+this.player.getSubHand().getCards().get(i));
-				this.add(button);
-				button.setEnabled(true);
-			}
+			this.mainHandPanel = new MainHandPanel(player);
+			this.subHandPanel = new SubHandPanel(player);
+			this.separator=new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.mainHandPanel,this.subHandPanel);
+			this.separator.setEnabled(false);
+			this.separator.setResizeWeight(0.1);
+			this.add(this.separator);
 		}
 		else
-		{			
-			for(int i=0;i<mainHand.size();i++)
-			{
-				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
-				this.add(button);
-				button.setEnabled(true);
-			}
+		{
+			this.mainHandPanel = new MainHandPanel(player);
 		}
 	}
+	
+
 	
 }
