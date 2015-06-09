@@ -1,6 +1,3 @@
-/**
- * 
- */
 package fr.iutvalence.java.projet.blackjack;
 
 import java.util.LinkedList;
@@ -44,5 +41,10 @@ public class Dealer
 	public String toString()
 	{
 		return "Dealer [hand=" + hand + "]";
+	}
+
+	public List<Card> getHand()
+	{
+		return this.hand;
 	}
 }

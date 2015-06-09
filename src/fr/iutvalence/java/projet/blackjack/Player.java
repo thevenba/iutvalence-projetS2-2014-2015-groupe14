@@ -22,6 +22,7 @@ public class Player
 	private Hand mainHand;
 	/** */
 	private Hand subHand;
+	/** */
 	
 	/**
 	 * 
@@ -35,7 +36,7 @@ public class Player
 	}
 
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetOne() throws BudgetNotEnoughException
 	{
@@ -46,7 +47,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetFive() throws BudgetNotEnoughException
 	{
@@ -57,7 +58,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetTwentyFive() throws BudgetNotEnoughException
 	{
@@ -68,7 +69,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetOneHundred() throws BudgetNotEnoughException
 	{
@@ -79,7 +80,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetFiveHundred() throws BudgetNotEnoughException
 	{
@@ -90,20 +91,24 @@ public class Player
 	}
 	
 	/**
-	 * @return the budget
+	 * @return budget the budget
 	 */
 	public int getBudget()
 	{
 		return this.budget;
 	}
 
+	/**
+	 * @param reward the reward to add
+	 */
 	public void setBudget(int reward)
 	{
 		this.budget += reward;
 	}
 	
 	/**
-	 * @return the mainHand
+
+	 * @return mainHand the main hand
 	 */
 	public Hand getMainHand()
 	{
@@ -111,24 +116,36 @@ public class Player
 	}
 	
 	/**
-	* @return subHand the sub hand
-	*/
+	 * @return subHand the sub hand
+	 */
 	public Hand getSubHand()
 	{
 		return this.subHand;
 	}
-
+	
+	/**
+	 *  reset the hand
+	 */
 	public void resetHand()
 	{
 		this.mainHand = new Hand();
+		this.subHand = new Hand();
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 */
 	public void deal(Deck deck)
 	{
 		this.mainHand.hit(deck);
 		this.mainHand.hit(deck);
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 * @throws AlreadyHitException if card is already hit
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void doubleDownMainHand(Deck deck) throws AlreadyHitException, BudgetNotEnoughException
 	{
 		if (this.budget < this.mainHand.getBet())
@@ -141,6 +158,11 @@ public class Player
 			this.insurance = this.insurance + this.mainHand.getBet()/4;
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 * @throws AlreadyHitException if card is already hit
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void doubleDownSubHand(Deck deck) throws AlreadyHitException, BudgetNotEnoughException
 	{
 		if (this.budget < this.subHand.getBet())
@@ -153,6 +175,10 @@ public class Player
 			this.insurance = this.insurance + this.subHand.getBet()/4;
 	}
 	
+	/**
+	 * @throws CardsValueNotEqual if the cards does not have the same value
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void split() throws CardsValueNotEqual, BudgetNotEnoughException
 	{
 		if (this.mainHand.getCards().get(0).getRank().getValue() != this.mainHand.getCards().get(1).getRank().getValue())
@@ -166,19 +192,11 @@ public class Player
 			this.insurance = this.insurance + this.subHand.getBet()/2;
 	}
 	
-	public void insurrance()
+	/**
+	 * pay the insurance
+	 */
+	public void insurance()
 	{
 		this.insurance = this.mainHand.getBet()/2 + this.subHand.getBet()/2;
 	}
-
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
-	@Override
-	public String toString()
-	{
-		return "Player [budget=" + this.budget + ", insurance=" + this.insurance + ", mainHand=" + this.mainHand + ", subHand=" + this.subHand + "]";
-	}
-	
-	
 }
