@@ -31,7 +31,7 @@ public class PlayerHandPanel extends Panel
 	{
 		this.player=player;
 		
-		if(this.player.getSplit())
+		if()
 		{
 			this.hand=this.player.getMainHand().getCards();
 			this.subHand=this.player.getSubHand().getCards();
