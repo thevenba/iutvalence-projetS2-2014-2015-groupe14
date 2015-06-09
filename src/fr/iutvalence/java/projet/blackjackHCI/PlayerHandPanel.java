@@ -35,7 +35,7 @@ public class PlayerHandPanel extends Panel
 				
 		if(this.subHand.size() > 0)
 		{
-			this.mainHandPanel = new MainHandPanel(player);
+			this.mainHandPanel = new MainHandPanel(player,true);
 			this.subHandPanel = new SubHandPanel(player);
 			this.separator=new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.mainHandPanel,this.subHandPanel);
 			this.separator.setEnabled(false);
@@ -44,7 +44,8 @@ public class PlayerHandPanel extends Panel
 		}
 		else
 		{
-			this.mainHandPanel = new MainHandPanel(player);
+			this.mainHandPanel = new MainHandPanel(player,true);
+			this.add(mainHandPanel);
 		}
 	}
 

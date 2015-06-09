@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package fr.iutvalence.java.projet.blackjackHCI;
 
@@ -7,10 +7,10 @@ import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
-import javax.swing.JSplitPane;
 
 import fr.iutvalence.java.projet.blackjack.Card;
 import fr.iutvalence.java.projet.blackjack.Player;
+import java.util.ArrayList;
 
 /**
  * @author duboitho
@@ -18,25 +18,35 @@ import fr.iutvalence.java.projet.blackjack.Player;
  */
 public class MainHandPanel extends JPanel
 {
-	
-	private Player player;
-	private List<Card> mainHand;	
-	private JButton mainButton = new JButton();
-	
-	public MainHandPanel(Player player){
-		
-		this.player=player;
-		this.mainHand=this.player.getMainHand().getCards();
-		
-		for(int i=0;i<mainHand.size();i++)
-		{
-			this.add(new JButton(""+this.player.getMainHand().getCards().get(i)));
-			this.setEnabled(false);
-		}
-	}
-	
-	public void refreshPlayerMainHand(){
-		this.mainHand=this.player.getMainHand().getCards();
-		this.add(new JButton((""+this.player.getMainHand().getCards().get(mainHand.size()))));
-	}
+
+    private final Player player;
+    private final List<JButton> mainHand;
+    private final boolean isMainHand;
+
+    public MainHandPanel(Player player, boolean isMainHand)
+    {
+        this.player = player;
+        this.mainHand = new ArrayList();
+        this.isMainHand = isMainHand;
+    }
+
+    public void refreshPlayerMainHand()
+    {
+        for (JButton buttonToDelete : this.mainHand) {
+            this.remove(buttonToDelete);
+        }
+        List<Card> handToLook;
+        if (this.isMainHand) {
+            handToLook = this.player.getMainHand().getCards();
+        }
+        else {
+            handToLook = this.player.getSubHand().getCards();
+        }
+        for (Card CardToAdd : handToLook) {
+            JButton buttonToAdd = new JButton("" + CardToAdd);
+            this.revalidate();
+            this.add(buttonToAdd);
+            this.mainHand.add(buttonToAdd);
+        }
+    }
 }
