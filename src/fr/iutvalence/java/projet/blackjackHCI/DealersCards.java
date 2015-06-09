@@ -3,6 +3,7 @@
  */
 package fr.iutvalence.java.projet.blackjackHCI;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -17,27 +18,27 @@ import fr.iutvalence.java.projet.blackjack.Dealer;
  */
 public class DealersCards extends JPanel
 {
-	private Dealer dealer;
-	
-	private List<Card> hand;
+	private final Dealer dealer;
+	private final List<JButton> hand;
 	
 	public DealersCards(Dealer dealer){
-		
 		this.dealer = dealer;
-		this.hand=this.dealer.getHand();
-		
-		for(int i=0;i<hand.size();i++)
-		{
-			JButton button = new JButton(""+this.dealer.getHand().get(i));
-			this.add(button);
-			button.setEnabled(false);
-		}
+	    this.hand = new ArrayList();
 	}
 	
-	public void refreshDealersHand(Dealer dealer){
-		this.dealer = dealer;
-		this.hand=this.dealer.getHand();
-		JButton button = new JButton(""+this.dealer.getHand().get(hand.size()));
-		this.add(button);
-	}
+    public void refreshDealerHand()
+    {
+        for (JButton buttonToDelete : this.hand) {
+            this.remove(buttonToDelete);
+        }
+        List<Card> handToLook;
+        handToLook = this.dealer.getHand();
+ 
+        for (Card CardToAdd : handToLook) {
+            JButton buttonToAdd = new JButton("" + CardToAdd);
+            this.revalidate();
+            this.add(buttonToAdd);
+            this.hand.add(buttonToAdd);
+        }
+    }
 }

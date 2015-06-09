@@ -21,7 +21,7 @@ public class MainHandPanel extends JPanel
 
     private final Player player;
     private final List<JButton> mainHand;
-    private final boolean isMainHand;
+    private boolean isMainHand;
 
     public MainHandPanel(Player player, boolean isMainHand)
     {
