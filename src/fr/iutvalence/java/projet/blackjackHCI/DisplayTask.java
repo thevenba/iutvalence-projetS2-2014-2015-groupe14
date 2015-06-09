@@ -51,13 +51,8 @@ public class DisplayTask implements Runnable, ActionListener
 		this.window.setSize(1280, 720);
 		this.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.window.setResizable(false);
-<<<<<<< HEAD
 		this.dealerPanel = new DealerPanel(dealer);
-		this.playerPanel = new PlayerPanel(player);
-=======
-		this.dealerPanel = new DealerPanel();
-		this.playerPanel = new PlayerPanel(this.player, this);
->>>>>>> refs/remotes/origin/master
+		this.playerPanel = new PlayerPanel(this.player,this);
 		this.separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT, this.dealerPanel, this.playerPanel);
 		this.separator.setEnabled(false);
 		this.separator.setResizeWeight(0.1);

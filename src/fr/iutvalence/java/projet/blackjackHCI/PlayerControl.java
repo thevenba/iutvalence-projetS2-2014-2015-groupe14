@@ -19,9 +19,6 @@ import fr.iutvalence.java.projet.blackjack.Player;
  */
 public class PlayerControl extends JPanel
 {
-<<<<<<< HEAD
-
-=======
 	private Player player;
 	private BetButtonsPanel betButtonsPanel;
 	private ActionButtonsPanel actionButtonsPanel;
@@ -57,5 +54,4 @@ public class PlayerControl extends JPanel
 	{
 		return actionButtonsPanel;
 	}
->>>>>>> refs/remotes/origin/master
 }
