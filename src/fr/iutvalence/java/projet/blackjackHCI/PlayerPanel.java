@@ -19,6 +19,6 @@ public class PlayerPanel extends JPanel
 	private JSplitPane separator;
 
 	public PlayerPanel(Player player){
-		this.playerDisplay = new PlayerDisplay(player);
+		this.playerDisplay = new PlayerDisplay();
 	}
 }
