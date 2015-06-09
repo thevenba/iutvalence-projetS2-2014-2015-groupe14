@@ -111,6 +111,7 @@ public class Player
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * @return mainHand the main hand
 	 */
 	public Hand getMainHand()
@@ -129,6 +130,15 @@ public class Player
 	/**
 	 *  reset the hand
 	 */
+=======
+	 * @return the mainHand
+	 */
+	public Hand getMainHand()
+	{
+		return mainHand;
+	}
+
+>>>>>>> refs/remotes/origin/master
 	public void resetHand()
 	{
 		this.mainHand = new Hand();

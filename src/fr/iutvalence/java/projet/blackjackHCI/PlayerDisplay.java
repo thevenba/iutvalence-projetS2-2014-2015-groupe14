@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * 
  */
@@ -28,3 +29,20 @@ public class PlayerDisplay extends JPanel
 		this.add(this.separator);
 	}
 }
+=======
+/**
+ * 
+ */
+package fr.iutvalence.java.projet.blackjackHCI;
+
+import javax.swing.JPanel;
+
+/**
+ * @author thevenba
+ *
+ */
+public class PlayerDisplay extends JPanel
+{
+
+}
+>>>>>>> refs/remotes/origin/master
