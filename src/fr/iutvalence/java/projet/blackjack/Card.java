@@ -30,14 +30,9 @@ public class Card
 	 * @throws InvalidAceException 
 	 * 
 	 */
-	public void switchAceValue() throws InvalidAceException
+	public void switchAceValue()
 	{
-		if (this.rank != Rank.ACE)
-			throw new InvalidAceException("This card is not an ACE");
-		if (this.rank.getValue() == 1)
-			this.rank.setValue(11);
-		else
-			this.rank.setValue(1);
+		this.rank.setValue(1);
 	}
 
 	/* (non-Javadoc)

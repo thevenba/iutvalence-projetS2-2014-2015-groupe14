@@ -75,6 +75,7 @@ public class DisplayTask implements Runnable, ActionListener
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFive())
 		{
@@ -87,6 +88,7 @@ public class DisplayTask implements Runnable, ActionListener
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetTwentyFive())
 		{
@@ -99,6 +101,7 @@ public class DisplayTask implements Runnable, ActionListener
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOneHundred())
 		{
@@ -111,6 +114,7 @@ public class DisplayTask implements Runnable, ActionListener
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFiveHundred())
 		{
@@ -123,6 +127,7 @@ public class DisplayTask implements Runnable, ActionListener
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal())
 		{
@@ -134,6 +139,7 @@ public class DisplayTask implements Runnable, ActionListener
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFiveHundred().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(true);
+			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerHand();
 		}
 	}
 }
