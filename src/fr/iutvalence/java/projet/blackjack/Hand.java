@@ -71,13 +71,21 @@ public class Hand
 		this.cards.add(deck.randomCard());
 	}
 	
-	
-	/* TODO changement as automatique */
 	public int reckonScore()
 	{
 		int score = 0;
 		for (int cardIndex = 0; cardIndex < this.cards.size(); cardIndex++)
 			score += this.cards.get(cardIndex).getRank().getValue();
+		if (score > 21)
+			for (final Card card : this.cards)
+				if (card.getRank() == Rank.ACE)
+				{
+					card.switchAceValue();
+					for (int cardIndex = 0; cardIndex < this.cards.size(); cardIndex++)
+						score += this.cards.get(cardIndex).getRank().getValue();
+					if (score <= 21)
+						return score;
+				}
 		return score;
 	}
 }

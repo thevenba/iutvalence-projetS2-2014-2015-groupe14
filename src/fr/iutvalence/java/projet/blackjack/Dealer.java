@@ -26,14 +26,6 @@ public class Dealer
 		this.hand.add(deck.randomCard());
 	}
 	
-	public int reckonScore()
-	{
-		int score = 0;
-		for (int cardIndex = 0; cardIndex < this.hand.size(); cardIndex++)
-			score += this.hand.get(cardIndex).getRank().getValue();
-		return score;
-	}
-
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */

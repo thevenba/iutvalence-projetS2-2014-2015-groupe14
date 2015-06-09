@@ -10,7 +10,7 @@ package fr.iutvalence.java.projet.blackjack;
 public enum Rank
 {
 
-	ACE(1),
+	ACE(11),
 	
 	KING(10),
 	
