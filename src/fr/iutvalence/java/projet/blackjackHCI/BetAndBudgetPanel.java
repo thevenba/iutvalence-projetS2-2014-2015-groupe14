@@ -18,7 +18,7 @@ public class BetAndBudgetPanel extends JPanel
 	private Player player;
 	
 	public BetAndBudgetPanel(Player player){
-		JLabel label = new JLabel("Mise : ");
+		JLabel label = new JLabel("Bet : ");
 		JLabel sum = new JLabel(""+this.player.getMainHand().getBet());
 		JLabel label1 = new JLabel("Budget : ");
 		JLabel sum1 = new JLabel(""+this.player.getBudget());

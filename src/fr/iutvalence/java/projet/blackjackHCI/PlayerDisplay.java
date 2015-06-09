@@ -20,7 +20,7 @@ public class PlayerDisplay extends JPanel
 	private JSplitPane separator;
 	
 	public PlayerDisplay(Player player){
-		this.handPanel = new HandPanel(player.getMainHand());
+		this.handPanel = new HandPanel(player);
 		this.betAndBudgetPanel = new BetAndBudgetPanel(player);
 		JSplitPane separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.betAndBudgetPanel,this.handPanel);
 		this.separator.setEnabled(false);

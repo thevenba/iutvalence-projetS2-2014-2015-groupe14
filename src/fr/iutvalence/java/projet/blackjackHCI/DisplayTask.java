@@ -47,7 +47,7 @@ public class DisplayTask implements Runnable
 		this.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		this.window.setResizable(false);
 		this.dealerPanel = new DealerPanel();
-		this.playerPanel = new PlayerPanel();
+		this.playerPanel = new PlayerPanel(player);
 		this.separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT, this.dealerPanel, this.playerPanel);
 		this.separator.setEnabled(false);
 		this.separator.setResizeWeight(0.1);

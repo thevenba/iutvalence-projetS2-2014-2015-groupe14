@@ -13,6 +13,8 @@ public class Player
 	public static final int BUDGET_DEFAULT = 1000;
 	/** */
 	public static final int INSURANCE_DEFAULT = 0;
+	/** */
+	public final static boolean SPLIT_DEFAULT = false;
 
 	/** */
 	private int budget;
@@ -22,6 +24,8 @@ public class Player
 	private Hand mainHand;
 	/** */
 	private Hand subHand;
+	/** */
+	private boolean split;
 	
 	/**
 	 * 
@@ -32,10 +36,11 @@ public class Player
 		this.insurance = Player.INSURANCE_DEFAULT;
 		this.mainHand = new Hand();
 		this.subHand = new Hand();
+		this.split = SPLIT_DEFAULT;
 	}
 
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetOne() throws BudgetNotEnoughException
 	{
@@ -46,7 +51,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetFive() throws BudgetNotEnoughException
 	{
@@ -57,7 +62,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetTwentyFive() throws BudgetNotEnoughException
 	{
@@ -68,7 +73,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetOneHundred() throws BudgetNotEnoughException
 	{
@@ -79,7 +84,7 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
+	 * @throws BudgetNotEnoughException if budget is not high enough
 	 */
 	public void setBetFiveHundred() throws BudgetNotEnoughException
 	{
@@ -90,29 +95,59 @@ public class Player
 	}
 	
 	/**
-	 * @return the budget
+	 * @return budget the budget
 	 */
 	public int getBudget()
 	{
 		return budget;
 	}
 
+	/**
+	 * @param reward the reward to add
+	 */
 	public void setBudget(int reward)
 	{
 		this.budget += reward;
 	}
 	
+	/**
+	 * @return mainHand the main hand
+	 */
+	public Hand getMainHand()
+	{
+	return this.mainHand;
+	}
+	
+	/**
+	 * @return subHand the sub hand
+	 */
+	public Hand getSubHand()
+	{
+	return this.subHand;
+	}
+	
+	/**
+	 *  reset the hand
+	 */
 	public void resetHand()
 	{
 		this.mainHand = new Hand();
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 */
 	public void deal(Deck deck)
 	{
 		this.mainHand.hit(deck);
 		this.mainHand.hit(deck);
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 * @throws AlreadyHitException if card is already hit
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void doubleDownMainHand(Deck deck) throws AlreadyHitException, BudgetNotEnoughException
 	{
 		if (this.budget < this.mainHand.getBet())
@@ -125,6 +160,11 @@ public class Player
 			this.insurance = this.insurance + this.mainHand.getBet()/4;
 	}
 	
+	/**
+	 * @param deck the deck of cards
+	 * @throws AlreadyHitException if card is already hit
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void doubleDownSubHand(Deck deck) throws AlreadyHitException, BudgetNotEnoughException
 	{
 		if (this.budget < this.subHand.getBet())
@@ -137,6 +177,10 @@ public class Player
 			this.insurance = this.insurance + this.subHand.getBet()/4;
 	}
 	
+	/**
+	 * @throws CardsValueNotEqual if the cards does not have the same value
+	 * @throws BudgetNotEnoughException if the budget is not high enough
+	 */
 	public void split() throws CardsValueNotEqual, BudgetNotEnoughException
 	{
 		if (this.mainHand.getCards().get(0).getRank().getValue() != this.mainHand.getCards().get(1).getRank().getValue())
@@ -148,21 +192,33 @@ public class Player
 		this.mainHand.removeCard(1);
 		if (this.insurance != 0)
 			this.insurance = this.insurance + this.subHand.getBet()/2;
+		this.split = true;
 	}
 	
-	public void insurrance()
+	/**
+	 * pay the insurance
+	 */
+	public void insurance()
 	{
 		this.insurance = this.mainHand.getBet()/2 + this.subHand.getBet()/2;
 	}
-
+	
+	/**
+	 * @return split if the hand is split
+	 */
+	public boolean getSplit(){
+		return this.split;
+	}
+	
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString()
 	{
-		return "Player [budget=" + budget + ", insurance=" + insurance
-				+ ", mainHand=" + mainHand + ", subHand=" + subHand + "]";
+		return "Player [budget=" + this.budget + ", insurance=" + this.insurance
+				+ ", mainHand=" + this.mainHand + ", subHand=" + this.subHand + "]";
 	}
 	
 	
