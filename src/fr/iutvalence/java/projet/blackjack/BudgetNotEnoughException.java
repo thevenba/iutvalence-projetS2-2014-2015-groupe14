@@ -10,8 +10,8 @@ package fr.iutvalence.java.projet.blackjack;
 public class BudgetNotEnoughException extends Exception
 {
 	/**
-	 * @param message
-	 * Return the message of the exception
+	 * Return the exception's message
+	 * @param message the message to display
 	 */
 	public BudgetNotEnoughException(String message)
 	{

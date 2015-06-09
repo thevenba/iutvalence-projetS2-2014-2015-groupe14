@@ -19,7 +19,7 @@ public enum Suit
 	SPADES;
 
 	/**
-	 * Constuctor of the class
+	 * Create suit
 	 */
 	private Suit()
 	{

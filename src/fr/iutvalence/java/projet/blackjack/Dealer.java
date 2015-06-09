@@ -8,17 +8,17 @@ import java.util.List;
 
 /**
  * @author thevenba
- * The Dealer the opponent of the player
+ * The Dealer, the opponent of the player
  */
 public class Dealer
 {
 	/** 
-	 * The hand of dealer 
+	 * The dealer's hand
 	 */
 	public List<Card> hand;
 	
 	/**
-	 * Constructor of the class
+	 * Create a dealer with a hand
 	 */
 	public Dealer()
 	{
@@ -26,7 +26,7 @@ public class Dealer
 	}
 	
 	/**
-	 * ResetHand : Reset the hand of dealer
+	 * Reset the dealer's hand
 	 */
 	public void resetHand()
 	{
@@ -34,9 +34,8 @@ public class Dealer
 	}
 	
 	/**
-	 * 
-	 * @param deck
-	 *  add a card in the hand of dealer
+	 * Add a card in the dealer's hand
+	 * @param deck the list of cards in the game
 	 */
 	public void hit(Deck deck)
 	{
@@ -44,8 +43,8 @@ public class Dealer
 	}
 	
 	/**
-	 *  Give the score of the dealer
-	 * @return score
+	 * Give the score of the dealer
+	 * @return score the dealer's score
 	 */
 	public int reckonScore()
 	{

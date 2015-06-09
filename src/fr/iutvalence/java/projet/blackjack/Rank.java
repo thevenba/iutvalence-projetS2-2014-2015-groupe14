@@ -39,15 +39,15 @@ public enum Rank
 	/** The value of a card */
 	private int value;
 	
-	/** Constructor of Rank*/
+	/** Create a rank withe a value*/
 	private Rank(int value)
 	{
 		this.setValue(value);
 	}
 
 	/**
-	 * Take the value of the card
-	 * @return the value
+	 * Take the card's value
+	 * @return value the card's value
 	 */
 	public int getValue()
 	{
@@ -55,8 +55,8 @@ public enum Rank
 	}
 
 	/**
+	 * Take the card's value
 	 * @param value the value to set
-	 * Take the value of this card
 	 */
 	public void setValue(int value)
 	{

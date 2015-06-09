@@ -13,13 +13,19 @@ public class Card
 	
 	private Rank rank;
 	
+	/**
+	 * Give a suit and a rank to the card
+	 * @param suit the suit of the card
+	 * @param rank the rank of the card
+	 */
 	public Card(Suit suit, Rank rank) {
 		this.suit = suit;
 		this.rank = rank;
 	}
 
 	/**
-	 * @return the rank
+	 * Get the card's rank
+	 * @return rank the card's rank
 	 */
 	public Rank getRank()
 	{
@@ -27,8 +33,8 @@ public class Card
 	}
 	
 	/**
-	 * @throws InvalidAceException 
-	 *  Switch the Ace's value or an exception if the player doesn't have Ace.
+	 * Switch the Ace's value or an exception if the player doesn't have Ace.
+	 * @throws InvalidAceException the exception if the card's rank isn't a Ace 
 	 */
 	public void switchAceValue() throws InvalidAceException
 	{

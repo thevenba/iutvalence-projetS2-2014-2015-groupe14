@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author thevenba
- * The deck of game
+ * The list of cards in the game
  */
 public class Deck
 {
@@ -19,7 +19,7 @@ public class Deck
 	private List<Card> cards;
 	
 	/**
-	 * Constuctor of the deck
+	 * Create a deck with all cards for play
 	 */
 	public Deck()
 	{
@@ -80,7 +80,7 @@ public class Deck
 	
 	/**
 	 *  Give a random card
-	 * @return a random card
+	 * @return card a random card in the deck
 	 */
 	public Card randomCard()
 	{

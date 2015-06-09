@@ -36,19 +36,21 @@ public class Player
 	/** The Bet with value of 500 */
 	private static final int BET_FIVE_HUNDRED = 500;
 	
-	/**  The budget of Player*/
+	/**  The Player's budget*/
 	private int budget;
 	
-	/**  The bet of player*/
+	/**  The player's bet*/
 	private int bet;
 	
-	/** The insurance of Player*/
+	/** The Player's insurance*/
 	private int insurance;
 	
-	/** The hand of the player*/
+	/** The player's hand*/
 	public List<Card> hand;
+	
 	/**
-	 * Constructor of the player
+	 * Create a player with a budget, a bet, an insurance
+	 * and a hand.
 	 */
 	public Player()
 	{
@@ -59,8 +61,8 @@ public class Player
 	}
 
 	/**
-	 * Take the bet of the player
-	 * @return the bet
+	 * Get the player's bet
+	 * @return bet the player's bet
 	 */
 	public int getBet()
 	{
@@ -68,8 +70,8 @@ public class Player
 	}
 
 	/**
+	 * Reset the player's bet
 	 * @param bet the bet to set
-	 * Reset the bet of player
 	 */
 	public void resetBet()
 	{
@@ -77,8 +79,8 @@ public class Player
 	}
 
 	/**
-	 * @throws BudgetNotEnoughException 
-	 *  Take a bet withe a value of 1
+	 * Take a bet with a value of 1
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void setBetOne() throws BudgetNotEnoughException
 	{
@@ -89,8 +91,8 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException
-	 * Take a bet withe a value of 5
+	 * Take a bet with a value of 5
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void setBetFive() throws BudgetNotEnoughException
 	{
@@ -101,8 +103,8 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException
-	 * Take a bet withe a value of 25 
+	 * Take a bet with a value of 25 
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void setBetTwentyFive() throws BudgetNotEnoughException
 	{
@@ -113,8 +115,8 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException
-	 * Take a bet withe a value of 100 
+	 * Take a bet with a value of 100 
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void setBetOneHundred() throws BudgetNotEnoughException
 	{
@@ -125,8 +127,8 @@ public class Player
 	}
 	
 	/**
-	 * @throws BudgetNotEnoughException 
-	 * Take a bet withe a value of 500
+	 * Take a bet with a value of 500
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void setBetFiveHundred() throws BudgetNotEnoughException
 	{
@@ -137,8 +139,8 @@ public class Player
 	}
 	
 	/**
-	 * Take the budget of player
-	 * @return the budget
+	 * Take the player's budget
+	 * @return budget the player's budget
 	 */
 	public int getBudget()
 	{
@@ -146,17 +148,16 @@ public class Player
 	}
 	
 	/**
-	 * 
-	 * @param bet
-	 * Add the bet in budget
+	 * Add the reward in budget
+	 * @param reward the reward of the round 
 	 */
-	public void setBudget(int bet)
+	public void setBudget(int reward)
 	{
-		this.budget += bet;
+		this.budget += reward;
 	}
 	
 	/**
-	 * Reset the hand of player
+	 * Reset the player's hand
 	 */
 	public void resetHand()
 	{
@@ -165,7 +166,7 @@ public class Player
 	
 	/**
 	 *  Take cards from the deck
-	 * @param deck
+	 * @param deck the list of cards in game
 	 */
 	public void deal(Deck deck)
 	{
@@ -175,7 +176,7 @@ public class Player
 	
 	/**
 	 * Take a random card from the deck to the hand of player
-	 * @param deck
+	 * @param deck the list of cards in game
 	 */
 	public void hit(Deck deck)
 	{
@@ -184,8 +185,8 @@ public class Player
 	
 	/**
 	 *  The player pay the double of the bet
-	 * @param deck
-	 * @throws BudgetNotEnoughException
+	 * @param deck the list of cards in game
+	 * @throws BudgetNotEnoughException exception if budget is not enough
 	 */
 	public void doubleDown(Deck deck) throws BudgetNotEnoughException
 	{
@@ -197,8 +198,8 @@ public class Player
 	}
 	
 	/**
-	 *  Take the score of the player
-	 * @return score of player
+	 *  Take the player's score
+	 * @return score the player's score
 	 */
 	public int reckonScore()
 	{

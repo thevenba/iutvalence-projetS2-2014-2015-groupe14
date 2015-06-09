@@ -17,9 +17,9 @@ public class Round
 	private Deck deck;
 	
 	/**
-	 * @param player
-	 * @param dealer
-	 * @param deck
+	 * @param player, the player of the game
+	 * @param dealer, the opposent of the player
+	 * @param deck, the deck of the game
 	 */
 	public Round(Player player, Dealer dealer, Deck deck)
 	{
@@ -28,6 +28,9 @@ public class Round
 		this.deck = deck;
 	}
 	
+	/**
+	 * 
+	 */
 	public void startRound()
 	{
 		player.resetHand();
@@ -54,7 +57,7 @@ public class Round
 	}
 	
 	/**
-	 * @param player
+	 * @param player, the player of the game
 	 */
 	private void firstBetChoice()
 	{
@@ -127,8 +130,8 @@ public class Round
 	}
 
 	/**
-	 * @param player
-	 * @param deck
+	 * @param player, the player of the game
+	 * @param deck, the deck of the game
 	 */
 	private void otherBetChoices()
 	{
@@ -209,6 +212,9 @@ public class Round
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private void cardChoice()
 	{
 		while(true)
@@ -258,6 +264,9 @@ public class Round
 		}
 	}
 
+	/**
+	 * 
+	 */
 	private void busting()
 	{
 		displayRound();
@@ -266,6 +275,9 @@ public class Round
 		tryAgain();
 	}
 
+	/**
+	 * 
+	 */
 	private void win()
 	{
 		displayRound();
@@ -296,6 +308,9 @@ public class Round
 			System.exit(0);
 	}
 	
+	/**
+	 * 
+	 */
 	private void displayRound()
 	{
 		System.out.println(this.player+"\n");

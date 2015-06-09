@@ -7,6 +7,10 @@ package fr.iutvalence.java.projet.blackjack;
  */
 public class InvalideChoiceException extends Exception
 {
+	/**
+	 * Return the exception's message
+	 * @param message the message to display
+	 */
 	public InvalideChoiceException(String message)
 	{
 		super(message);
