@@ -40,13 +40,13 @@ public class PlayerHandPanel extends Panel
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);
-				button.setEnabled(false);
+				button.setEnabled(true);
 			}
 			for(int i=0;i<subHand.size();i++)
 			{
 				JButton button = new JButton(""+this.player.getSubHand().getCards().get(i));
 				this.add(button);
-				button.setEnabled(false);
+				button.setEnabled(true);
 			}
 		}
 		else
@@ -57,7 +57,7 @@ public class PlayerHandPanel extends Panel
 			{
 				JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
 				this.add(button);
-				button.setEnabled(false);
+				button.setEnabled(true);
 			}
 		}
 	}

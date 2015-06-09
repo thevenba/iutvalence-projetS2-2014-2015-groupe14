@@ -19,13 +19,14 @@ public class BetAndBudgetPanel extends JPanel
 	 * @param player the Player
 	 */
 	public BetAndBudgetPanel(Player player){
-		JLabel label = new JLabel("Bet : ");
-		JLabel sum = new JLabel(""+this.player.getMainHand().getBet());
-		JLabel label1 = new JLabel("Budget : ");
-		JLabel sum1 = new JLabel(""+this.player.getBudget());
-		this.add(label);
-		this.add(sum);
-		this.add(label1);
-		this.add(sum1);
+		this.player = player;
+		JLabel betLabel = new JLabel("Bet : ");
+		JLabel betSumLabel = new JLabel(""+this.player.getMainHand().getBet());
+		JLabel budgetLabel = new JLabel("Budget : ");
+		JLabel budgetSumLabel = new JLabel(""+this.player.getBudget());
+		this.add(betLabel);
+		this.add(betSumLabel);
+		this.add(budgetLabel);
+		this.add(budgetSumLabel);
 	}
 }
