@@ -1,41 +1,50 @@
 package fr.iutvalence.java.projet.blackjack;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * @author duboitho
- *	class dealer the dealer deal the cards and is the player competitor
+ * @author thevenba
+ *
  */
 public class Dealer
 {
-	/**
-	 * constructor of dealer
+	public List<Card> hand;
+	
+	public Dealer()
+	{
+		this.hand = new LinkedList<>();
+	}
+	
+	public void resetHand()
+	{
+		this.hand = new LinkedList<>();
+	}
+	
+	public void hit(Deck deck)
+	{
+		this.hand.add(deck.randomCard());
+	}
+	
+	public int reckonScore()
+	{
+		int score = 0;
+		for (int cardIndex = 0; cardIndex < this.hand.size(); cardIndex++)
+			score += this.hand.get(cardIndex).getRank().getValue();
+		return score;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
 	 */
-	public Dealer() {
-	}
-	
-	/**
-	 * deal the player's hand
-	 */
-	public void dealPlayersHand()
+	@Override
+	public String toString()
 	{
-		
+		return "Dealer [hand=" + hand + "]";
 	}
-	
-	/**
-	 * deal the dealer's hand
-	 */
-	public void dealDealersHand()
+
+	public List<Card> getHand()
 	{
-		
+		return this.hand;
 	}
-	
-	public void giveCard()
-	{
-		
-	}
-	
-	public int payInsurance()
-	{
-		return 0;
-	}
-	
 }
