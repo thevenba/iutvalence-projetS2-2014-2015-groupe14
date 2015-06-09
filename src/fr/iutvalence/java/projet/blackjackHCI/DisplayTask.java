@@ -8,12 +8,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import javax.swing.WindowConstants;
 
 import fr.iutvalence.java.projet.blackjack.BudgetNotEnoughException;
 import fr.iutvalence.java.projet.blackjack.Dealer;
 import fr.iutvalence.java.projet.blackjack.Deck;
+import fr.iutvalence.java.projet.blackjack.Hand;
 import fr.iutvalence.java.projet.blackjack.Player;
 
 /**
@@ -25,6 +27,7 @@ public class DisplayTask implements Runnable, ActionListener
 	private Dealer dealer;
 	private Deck deck;
 	private Player player;
+	private Hand currentHand;
 	private JFrame window;
 	private DealerPanel dealerPanel;
 	private PlayerPanel playerPanel;
@@ -36,6 +39,7 @@ public class DisplayTask implements Runnable, ActionListener
 		this.dealer = dealer;
 		this.deck = deck;
 		this.player = player;
+		this.currentHand = player.getMainHand();
 	}
 
 	@Override
@@ -140,6 +144,53 @@ public class DisplayTask implements Runnable, ActionListener
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(true);
 			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerHand();
+		}
+		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit())
+		{
+			if (this.currentHand == this.player.getMainHand())
+			{
+				/** TODO pouvoir relancer un round, une partie
+				 * reset l'interface
+				 */
+				this.player.getMainHand().hit(deck);
+				if (this.player.getMainHand().reckonScore() > 21)
+				{
+					JOptionPane.showMessageDialog(window,
+						    "You are going bust !",
+						    "Busting",
+						    JOptionPane.PLAIN_MESSAGE);
+				}
+			}
+			else
+			{
+				/** TODO pouvoir relancer un round, une partie
+				 * reset l'interface
+				 */
+				this.player.getSubHand().hit(deck);
+				if (this.player.getSubHand().reckonScore() > 21)
+				{
+					JOptionPane.showMessageDialog(window,
+						    "You are going bust !",
+						    "Busting",
+						    JOptionPane.PLAIN_MESSAGE);
+				}
+				
+			}
+		}
+		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getDoubleDown())
+		{
+		}
+		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance())
+		{
+			
+		}
+		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getSplit())
+		{
+			
+		}
+		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getStand())
+		{
+			
 		}
 	}
 }
