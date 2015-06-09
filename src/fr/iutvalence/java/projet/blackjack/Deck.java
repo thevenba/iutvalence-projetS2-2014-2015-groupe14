@@ -8,14 +8,18 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * The game's deck
  * @author thevenba
- *
  */
 public class Deck
 {
 
+	/** List of cards*/
 	private List<Card> cards;
 	
+	/**
+	 * Create a deck with all cards
+	 */
 	public Deck()
 	{
 		this.cards = new ArrayList<>();
@@ -74,6 +78,10 @@ public class Deck
 		Collections.shuffle(cards);
 	}
 	
+	/**
+	 * Return a random card from the deck
+	 * @return card a random card from the deck
+	 */
 	public Card randomCard()
 	{
 		return this.cards.remove(this.cards.size()-1);

@@ -4,22 +4,30 @@
 package fr.iutvalence.java.projet.blackjack;
 
 /**
+ * Game's cards
  * @author thevenba
- *
  */
 public class Card
 {
+	/** Card's suit */
 	private Suit suit;
 	
+	/** Card's rank */
 	private Rank rank;
 	
+	/**
+	 * Create a card with a suit and a rank 
+	 * @param suit the card's suit
+	 * @param rank the card's rank
+	 */
 	public Card(Suit suit, Rank rank) {
 		this.suit = suit;
 		this.rank = rank;
 	}
 
 	/**
-	 * @return the rank
+	 * Get the rank of the card
+	 * @return rank the rank of the card
 	 */
 	public Rank getRank()
 	{
@@ -27,7 +35,8 @@ public class Card
 	}
 	
 	/**
-	 * @throws InvalidAceException 
+	 * Switch the Ace's value or return an exception
+	 * @throws InvalidAceException The exception if the player doesn't have an ace
 	 * 
 	 */
 	public void switchAceValue() throws InvalidAceException

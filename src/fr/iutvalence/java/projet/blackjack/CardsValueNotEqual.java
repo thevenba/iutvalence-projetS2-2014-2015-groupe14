@@ -4,8 +4,8 @@
 package fr.iutvalence.java.projet.blackjack;
 
 /**
+ * Exception
  * @author DraikkaiZ
- *
  */
 public class CardsValueNotEqual extends Exception
 {

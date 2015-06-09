@@ -4,8 +4,8 @@
 package fr.iutvalence.java.projet.blackjack;
 
 /**
+ * Card's suit
  * @author thevenba
- *
  */
 public enum Suit
 {
@@ -19,7 +19,7 @@ public enum Suit
 	SPADES;
 
 	/**
-	 * 
+	 * Create all card's suit
 	 */
 	private Suit()
 	{
