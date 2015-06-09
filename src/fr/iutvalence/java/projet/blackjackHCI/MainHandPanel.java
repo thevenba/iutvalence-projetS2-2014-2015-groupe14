@@ -30,15 +30,13 @@ public class MainHandPanel extends JPanel
 		
 		for(int i=0;i<mainHand.size();i++)
 		{
-			JButton button = new JButton(""+this.player.getMainHand().getCards().get(i));
-			this.add(button);
-			button.setEnabled(true);
+			this.add(new JButton(""+this.player.getMainHand().getCards().get(i)));
+			this.setEnabled(false);
 		}
 	}
 	
-	public void refreshPlayerSubHand(){
+	public void refreshPlayerMainHand(){
 		this.mainHand=this.player.getMainHand().getCards();
-		this.mainButton.setText(""+this.player.getMainHand().getCards().get(mainHand.size()));
-		this.add(mainButton);
+		this.add(new JButton((""+this.player.getMainHand().getCards().get(mainHand.size()))));
 	}
 }

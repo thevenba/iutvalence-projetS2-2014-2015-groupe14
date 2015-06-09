@@ -139,7 +139,7 @@ public class DisplayTask implements Runnable, ActionListener
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFiveHundred().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(true);
-			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerHand();
+			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 		}
 	}
 }
