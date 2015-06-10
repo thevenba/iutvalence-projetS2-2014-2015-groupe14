@@ -19,8 +19,8 @@ import java.util.ArrayList;
 public class MainHandPanel extends JPanel
 {
 
-    private final Player player;
-    private final List<JButton> mainHand;
+    private Player player;
+    private List<JButton> mainHand;
     private boolean isMainHand;
 
     public MainHandPanel(Player player, boolean isMainHand)

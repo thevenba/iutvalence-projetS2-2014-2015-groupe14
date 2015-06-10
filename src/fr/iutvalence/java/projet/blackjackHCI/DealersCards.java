@@ -19,12 +19,12 @@ import fr.iutvalence.java.projet.blackjack.Hand;
  */
 public class DealersCards extends JPanel
 {
-	private final Dealer dealer;
+	private Dealer dealer;
 	private List<JButton> hand;
 	
 	public DealersCards(Dealer dealer){
 		this.dealer = dealer;
-	    this.hand = new ArrayList();
+	    this.hand = new ArrayList<JButton>();
 	}
 	
     public void refreshDealerHand()
@@ -48,6 +48,5 @@ public class DealersCards extends JPanel
     	for (JButton buttonToDelete : this.hand) {
             this.remove(buttonToDelete);
         }
-    	
     }
 }

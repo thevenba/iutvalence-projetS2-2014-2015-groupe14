@@ -139,8 +139,8 @@ public class DisplayTask implements Runnable, ActionListener
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal())
 		{
-			this.player.deal(deck);
-			this.dealer.getHand().hit(deck);
+			this.player.deal(this.deck);
+			this.dealer.getHand().hit(this.deck);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOne().setEnabled(false);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFive().setEnabled(false);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetTwentyFive().setEnabled(false);
@@ -168,7 +168,7 @@ public class DisplayTask implements Runnable, ActionListener
 				/** TODO pouvoir relancer un round, une partie
 				 * reset l'interface
 				 */
-				this.player.getMainHand().hit(deck);
+				this.player.getMainHand().hit(this.deck);
 				int score = this.player.getMainHand().reckonScore();
 				this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 				if (score > 21)
@@ -184,7 +184,7 @@ public class DisplayTask implements Runnable, ActionListener
 				/** TODO pouvoir relancer un round, une partie
 				 * reset l'interface
 				 */
-				this.player.getSubHand().hit(deck);
+				this.player.getSubHand().hit(this.deck);
 				int score = this.player.getSubHand().reckonScore();
 				if (score > 21)
 				{
@@ -379,6 +379,9 @@ public class DisplayTask implements Runnable, ActionListener
 	
 	public void newGame()
 	{
-		
+		this.deck = new Deck();
+		this.player = new Player();
+		this.currentHand = this.player.getMainHand();
+		this.nextRound();
 	}
 }
