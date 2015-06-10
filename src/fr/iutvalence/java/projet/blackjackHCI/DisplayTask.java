@@ -343,6 +343,7 @@ public class DisplayTask implements Runnable, ActionListener
 				    "Busting", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
 		    if (s == "Next Round")
 		    {
+		    	
 		    	this.nextRound();
 		    }
 		    else if (s == "New Game")
