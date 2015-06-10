@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 import fr.iutvalence.java.projet.blackjack.Card;
 import fr.iutvalence.java.projet.blackjack.Dealer;
+import fr.iutvalence.java.projet.blackjack.Hand;
 
 /**
  * @author duboitho
@@ -42,7 +43,7 @@ public class DealersCards extends JPanel
         }
     }
     
-    public void refreshHardDealer()
+    public void resetDealerHand()
     {
     	for (JButton buttonToDelete : this.hand) {
             this.remove(buttonToDelete);
