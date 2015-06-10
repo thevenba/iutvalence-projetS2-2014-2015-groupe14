@@ -195,7 +195,7 @@ public class Player
 	/**
 	 * pay the insurance
 	 */
-	public void insurance()
+	public void insurance() throws BudgetNotEnoughException
 	{
 		this.insurance = this.mainHand.getBet()/2 + this.subHand.getBet()/2;
 	}

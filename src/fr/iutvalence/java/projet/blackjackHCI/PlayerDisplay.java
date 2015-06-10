@@ -30,11 +30,6 @@ public class PlayerDisplay extends JPanel
 		handPanel.setSize(500, 500);
 		this.add(betAndBudgetPanel);
 		this.add(handPanel);
-/*
-		this.separator = new JSplitPane(JSplitPane.VERTICAL_SPLIT,this.betAndBudgetPanel,this.handPanel);
-		this.separator.setEnabled(false);
-		this.separator.setResizeWeight(0.1);
-		this.add(this.separator);*/
 	}
 
 	/**

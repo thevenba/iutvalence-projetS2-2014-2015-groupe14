@@ -42,5 +42,11 @@ public class DealersCards extends JPanel
         }
     }
     
-    
+    public void refreshHardDealer()
+    {
+    	for (JButton buttonToDelete : this.hand) {
+            this.remove(buttonToDelete);
+        }
+    	
+    }
 }
