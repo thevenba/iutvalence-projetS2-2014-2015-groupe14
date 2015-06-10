@@ -359,6 +359,10 @@ public class DisplayTask implements Runnable, ActionListener
 	
 	public void newGame()
 	{
-		
+		this.dealer = new Dealer();
+		this.deck = new Deck();
+		this.player = new Player();
+		this.currentHand = player.getMainHand();
+		this.nextRound();
 	}
 }
