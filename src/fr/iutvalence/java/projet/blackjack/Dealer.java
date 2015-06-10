@@ -13,7 +13,7 @@ public class Dealer
 	
 	public Dealer()
 	{
-		this.hand = new Hand();;
+		this.hand = new Hand();
 	}
 	
 	public void resetHand()
