@@ -47,5 +47,6 @@ public class DealersCards extends JPanel
     	for (JButton buttonToDelete : this.hand) {
             this.remove(buttonToDelete);
         }
+    	
     }
 }
