@@ -1,0 +1,12 @@
+window_sizes 960 672 240 720 512 82
+diagrams
+  active  classdiagram_ref 128005 // prj
+    567 411 100 4 0 0
+end
+show_stereotypes
+selected operation_ref 128005 // DonnerMise
+open
+  class_ref 128133 // Joueur
+  class_ref 128261 // Humain
+end
+end

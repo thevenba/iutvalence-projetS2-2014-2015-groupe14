@@ -1,0 +1,11 @@
+class Dealer
+!!!129154.java!!!	Dealer()
+		this.hand = new LinkedList<>();
+!!!129282.java!!!	resetHand() : void
+		this.hand = new LinkedList<>();
+!!!129410.java!!!	hit(inout deck : Deck) : void
+		this.hand.add(deck.randomCard());
+!!!129538.java!!!	toString() : String
+		return "Dealer [hand=" + hand + "]";
+!!!129666.java!!!	getHand() : Card
+		return this.hand;

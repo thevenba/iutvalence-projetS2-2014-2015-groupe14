@@ -1,0 +1,1873 @@
+format 76
+"blackjack" // blackjack
+  revision 1
+  modified_by 2 ""
+  // class settings
+  //class diagram settings
+  draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+  //use case diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default class_drawing_mode default shadow default show_stereotype_properties default
+  //sequence diagram settings
+  show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+  //collaboration diagram settings
+  show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+  //object diagram settings
+   write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+  //component diagram settings
+  package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //deployment diagram settings
+  package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+  draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+  //state diagram settings
+  package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+  show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+  //activity diagram settings
+  package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+  show_infonote default drawing_language default show_stereotype_properties default
+  
+  java_dir "G:/git/iutvalence-projetS2-2014-2015-groupe14/src/fr/iutvalence/java/projet/blackjack/"
+  java_package "fr.iutvalence.java.projet.blackjack"
+  classview 128002 "blackjack"
+    //class diagram settings
+    draw_all_relations default hide_attributes default hide_operations default hide_getset_operations default show_members_full_definition default show_members_visibility default show_members_stereotype default show_members_context default show_members_multiplicity default show_members_initialization default show_attribute_modifiers default member_max_width 0 show_parameter_dir default show_parameter_name default package_name_in_tab default class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers default show_relation_visibility default show_infonote default shadow default show_stereotype_properties default
+    //collaboration diagram settings
+    show_full_operations_definition default show_hierarchical_rank default write_horizontally default class_drawing_mode default drawing_language default package_name_in_tab default show_context default show_msg_context default draw_all_relations default shadow default show_stereotype_properties default
+    //object diagram settings
+     write_horizontally default package_name_in_tab default show_context default auto_label_position default draw_all_relations default shadow default show_stereotype_properties default
+    //sequence diagram settings
+    show_full_operations_definition default write_horizontally default class_drawing_mode default drawing_language default draw_all_relations default shadow default show_stereotype_properties default show_class_context_mode default show_msg_context_mode default
+    //state diagram settings
+    package_name_in_tab default show_context default auto_label_position default write_trans_label_horizontally default show_trans_definition default draw_all_relations default shadow default
+    show_activities default region_horizontally default drawing_language default show_stereotype_properties default
+    //class settings
+    //activity diagram settings
+    package_name_in_tab default show_context default show_opaque_action_definition default auto_label_position default write_flow_label_horizontally default draw_all_relations default shadow default
+    show_infonote default drawing_language default show_stereotype_properties default
+    class 128002 "AlreadyHitException"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author DraikkaiZ
+"
+      classrelation 128002 // <generalisation>
+	relation 128002 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128002 // <generalisation>
+	  b parent class_ref 128130 // Exception
+      end
+
+      operation 128002 "AlreadyHitException"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param message"
+      end
+    end
+
+    class 128258 "BlackjackLauncher"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "Launch a game.
+
+@author thevenba
+"
+      operation 128130 "BlackjackLauncher"
+	private explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "private and empty constructor."
+      end
+
+      operation 128258 "main"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param inout name "args" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0}[] ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "Where the application starts.
+
+@param args not used."
+      end
+
+      classrelation 130818 // <aggregation>
+	relation 130818 o---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130818 // <aggregation>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130946 // <aggregation>
+      end
+
+      classrelation 131074 // <directional aggregation>
+	relation 130946 o-->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131074 // <directional aggregation>
+	  b parent class_ref 129282 // Hand
+      end
+
+      classrelation 131202 // <aggregation>
+	relation 131074 o---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131202 // <aggregation>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131330 // <aggregation>
+      end
+
+      classrelation 131458 // <aggregation>
+	relation 131202 o---
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131458 // <aggregation>
+	  b role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131586 // <aggregation>
+      end
+
+      classrelation 131714 // <unidirectional association>
+	relation 131330 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131714 // <unidirectional association>
+	  b parent class_ref 129666 // Player
+      end
+
+      classrelation 131842 // <unidirectional association>
+	relation 131458 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131842 // <unidirectional association>
+	  b parent class_ref 129282 // Hand
+      end
+
+      classrelation 131970 // <unidirectional association>
+	relation 131586 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 131970 // <unidirectional association>
+	  b parent class_ref 129026 // Dealer
+      end
+
+      classrelation 132098 // <unidirectional association>
+	relation 131714 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132098 // <unidirectional association>
+	  b parent class_ref 129666 // Player
+      end
+
+      classrelation 132226 // <unidirectional association>
+	relation 131842 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 132226 // <unidirectional association>
+	  b parent class_ref 129154 // Deck
+      end
+    end
+
+    class 128386 "BudgetNotEnoughException"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      classrelation 128130 // <generalisation>
+	relation 128130 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128130 // <generalisation>
+	  b parent class_ref 128130 // Exception
+      end
+
+      operation 128386 "BudgetNotEnoughException"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param message"
+      end
+    end
+
+    class 128514 "Card"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      classrelation 128258 // suit (<unidirectional association>)
+	relation 128258 --->
+	  a role_name "suit" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128258 // suit (<unidirectional association>)
+	  b parent class_ref 128642 // Suit
+      end
+
+      classrelation 128386 // rank (<unidirectional association>)
+	relation 128386 --->
+	  a role_name "rank" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 128386 // rank (<unidirectional association>)
+	  b parent class_ref 128770 // Rank
+      end
+
+      operation 128514 "Card"
+	public explicit_return_type ""
+	nparams 2
+	  param inout name "suit" type class_ref 128642 // Suit
+	  param inout name "rank" type class_ref 128770 // Rank
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 128642 "getRank"
+	public return_type class_ref 128770 // Rank
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return the rank"
+      end
+
+      operation 128770 "switchAceValue"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws InvalidAceException 
+"
+      end
+
+      operation 128898 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment " (non-Javadoc)
+@see java.lang.Object#toString()"
+      end
+
+      classrelation 130306 // <unidirectional association>
+	relation 130306 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130306 // <unidirectional association>
+	  b parent class_ref 129410 // InvalidAceException
+      end
+    end
+
+    class 128642 "Suit"
+      visibility public stereotype "enum"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      attribute 131202 "CLUBS"
+	public type class_ref 128642 // Suit
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 131330 "DIAMONDS"
+	public type class_ref 128642 // Suit
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 131458 "HEARTS"
+	public type class_ref 128642 // Suit
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 131586 "SPADES"
+	public type class_ref 128642 // Suit
+	cpp_decl ""
+	java_decl "  ${@}${name}${value},${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 135042 "Suit"
+	private explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 128770 "Rank"
+      visibility public stereotype "enum"
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      attribute 129410 "ACE"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(11),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129538 "KING"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(10),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129666 "QUEEN"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(10),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129794 "JACK"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(10),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129922 "TEN"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(10),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130050 "NINE"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(9),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130178 "EIGHT"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(8),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130306 "SEVEN"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(7),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130434 "SIX"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(6),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130562 "FIVE"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(5),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130690 "FOUR"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(4),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130818 "THREE"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(3),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 130946 "TWO"
+	public type class_ref 128770 // Rank
+	cpp_decl ""
+	java_decl "  ${@}${name}(2),${comment}"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 131074 "value"
+	private explicit_type "int"
+	stereotype "attribute"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 133506 "Rank"
+	private explicit_return_type ""
+	nparams 1
+	  param in name "value" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 133634 "getValue"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return the value"
+      end
+
+      operation 133762 "setValue"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "value" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param value the value to set"
+      end
+    end
+
+    class 128898 "CardsValueNotEqual"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author DraikkaiZ
+"
+      classrelation 128514 // <generalisation>
+	relation 128514 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 128514 // <generalisation>
+	  b parent class_ref 128130 // Exception
+      end
+
+      operation 129026 "CardsValueNotEqual"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param message"
+      end
+    end
+
+    class 129026 "Dealer"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      classrelation 128642 // hand (<unidirectional association>)
+	relation 128642 --->
+	  stereotype "List"
+	  a role_name "hand" public
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128642 // hand (<unidirectional association>)
+	  b parent class_ref 128514 // Card
+      end
+
+      operation 129154 "Dealer"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129282 "resetHand"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129410 "hit"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deck" type class_ref 129154 // Deck
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129538 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment " (non-Javadoc)
+@see java.lang.Object#toString()"
+      end
+
+      operation 129666 "getHand"
+	public return_type class_ref 128514 // Card
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129154 "Deck"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      classrelation 128770 // cards (<unidirectional association>)
+	relation 128770 --->
+	  stereotype "List"
+	  a role_name "cards" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128770 // cards (<unidirectional association>)
+	  b parent class_ref 128514 // Card
+      end
+
+      operation 129794 "Deck"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 129922 "randomCard"
+	public return_type class_ref 128514 // Card
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 131330 // <aggregation>
+	relation_ref 131074 // <aggregation>
+      end
+    end
+
+    class 129282 "Hand"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      attribute 128002 "BET_DEFAULT"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 0"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128130 "BET_ONE"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 1"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128258 "BET_FIVE"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 5"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128386 "BET_TWENTY_FIVE"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 25"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128514 "BET_ONE_HUNDRED"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 100"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 128642 "BET_FIVE_HUNDRED"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 500"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 128898 // cards (<unidirectional association>)
+	relation 128898 --->
+	  stereotype "List"
+	  a role_name "cards" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 128898 // cards (<unidirectional association>)
+	  b parent class_ref 128514 // Card
+      end
+
+      attribute 128770 "bet"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      operation 130050 "Hand"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 130178 "getBet"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return the bet"
+      end
+
+      operation 130306 "setBet"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "bet" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param bet the bet to set"
+      end
+
+      operation 130434 "getCards"
+	public return_type class_ref 128514 // Card
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}List<${type}> ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return the cards"
+      end
+
+      operation 130562 "setCards"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "cards" explicit_type "List<Card>"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param cards the cards to set"
+      end
+
+      operation 130690 "removeCard"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "index" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 130818 "hit"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deck" type class_ref 129154 // Deck
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 130946 "reckonScore"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      classrelation 130946 // <aggregation>
+	relation_ref 130818 // <aggregation>
+      end
+    end
+
+    class 129410 "InvalidAceException"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      classrelation 129026 // <generalisation>
+	relation 129026 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129026 // <generalisation>
+	  b parent class_ref 128130 // Exception
+      end
+
+      operation 131074 "InvalidAceException"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+    end
+
+    class 129538 "InvalideChoiceException"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129154 // <generalisation>
+	relation 129154 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129154 // <generalisation>
+	  b parent class_ref 128130 // Exception
+      end
+
+      operation 131202 "InvalideChoiceException"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "message" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129666 "Player"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment "@author thevenba
+"
+      attribute 128898 "BUDGET_DEFAULT"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 1000"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129026 "INSURANCE_DEFAULT"
+	class_attribute const_attribute public explicit_type "int"
+	init_value " 0"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129154 "budget"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      attribute 129282 "insurance"
+	private explicit_type "int"
+	cpp_decl ""
+	java_decl "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+      end
+
+      classrelation 129282 // mainHand (<unidirectional association>)
+	relation 129282 --->
+	  a role_name "mainHand" private
+	    comment " 
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129282 // mainHand (<unidirectional association>)
+	  b parent class_ref 129282 // Hand
+      end
+
+      classrelation 129410 // subHand (<unidirectional association>)
+	relation 129410 --->
+	  a role_name "subHand" private
+	    comment " 
+"
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129410 // subHand (<unidirectional association>)
+	  b parent class_ref 129282 // Hand
+      end
+
+      operation 131330 "Player"
+	public explicit_return_type ""
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "
+"
+      end
+
+      operation 131458 "setBetOne"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws BudgetNotEnoughException if budget is not high enough"
+      end
+
+      operation 131586 "setBetFive"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws BudgetNotEnoughException if budget is not high enough"
+      end
+
+      operation 131714 "setBetTwentyFive"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws BudgetNotEnoughException if budget is not high enough"
+      end
+
+      operation 131842 "setBetOneHundred"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws BudgetNotEnoughException if budget is not high enough"
+      end
+
+      operation 131970 "setBetFiveHundred"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws BudgetNotEnoughException if budget is not high enough"
+      end
+
+      operation 132098 "getBudget"
+	public explicit_return_type "int"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return budget the budget"
+      end
+
+      operation 132226 "setBudget"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "reward" explicit_type "int"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param reward the reward to add"
+      end
+
+      operation 132354 "getMainHand"
+	public return_type class_ref 129282 // Hand
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "<<<<<<< HEAD
+@return mainHand the main hand"
+      end
+
+      operation 132482 "getSubHand"
+	public return_type class_ref 129282 // Hand
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@return subHand the sub hand"
+      end
+
+      operation 132610 "resetHand"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment " reset the hand"
+      end
+
+      operation 132738 "deal"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deck" type class_ref 129154 // Deck
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param deck the deck of cards"
+      end
+
+      operation 132866 "doubleDownMainHand"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deck" type class_ref 129154 // Deck
+	nexceptions 2
+	  exception class_ref 128002 // AlreadyHitException
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param deck the deck of cards
+@throws AlreadyHitException if card is already hit
+@throws BudgetNotEnoughException if the budget is not high enough"
+      end
+
+      operation 132994 "doubleDownSubHand"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "deck" type class_ref 129154 // Deck
+	nexceptions 2
+	  exception class_ref 128002 // AlreadyHitException
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param deck the deck of cards
+@throws AlreadyHitException if card is already hit
+@throws BudgetNotEnoughException if the budget is not high enough"
+      end
+
+      operation 133122 "split"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 2
+	  exception class_ref 128898 // CardsValueNotEqual
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@throws CardsValueNotEqual if the cards does not have the same value
+@throws BudgetNotEnoughException if the budget is not high enough"
+      end
+
+      operation 133250 "insurance"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "pay the insurance"
+      end
+
+      operation 133378 "toString"
+	public explicit_return_type "String"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	java_annotation "@Override
+"
+	
+	
+	
+	comment " (non-Javadoc)
+@see java.lang.Object#toString()"
+      end
+
+      classrelation 130434 // <unidirectional association>
+	relation 130434 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130434 // <unidirectional association>
+	  b parent class_ref 128386 // BudgetNotEnoughException
+      end
+
+      classrelation 130562 // <unidirectional association>
+	relation 130562 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130562 // <unidirectional association>
+	  b parent class_ref 128002 // AlreadyHitException
+      end
+
+      classrelation 130690 // <unidirectional association>
+	relation 130690 --->
+	  a role_name "" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 130690 // <unidirectional association>
+	  b parent class_ref 128898 // CardsValueNotEqual
+      end
+
+      classrelation 131586 // <aggregation>
+	relation_ref 131202 // <aggregation>
+      end
+    end
+
+    class 129794 "Round"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      comment " TODO A remplacer par une 'vraie' IHM
+
+
+@author thevenba
+"
+      classrelation 129538 // player (<unidirectional association>)
+	relation 129538 --->
+	  a role_name "player" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129538 // player (<unidirectional association>)
+	  b parent class_ref 129666 // Player
+      end
+
+      classrelation 129666 // dealer (<unidirectional association>)
+	relation 129666 --->
+	  a role_name "dealer" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129666 // dealer (<unidirectional association>)
+	  b parent class_ref 129026 // Dealer
+      end
+
+      classrelation 129794 // deck (<unidirectional association>)
+	relation 129794 --->
+	  a role_name "deck" private
+	    java "  ${comment}${@}${visibility}${static}${final}${transient}${volatile}${type} ${name}${value};
+"
+	    classrelation_ref 129794 // deck (<unidirectional association>)
+	  b parent class_ref 129154 // Deck
+      end
+
+      operation 133890 "Round"
+	public explicit_return_type ""
+	nparams 3
+	  param inout name "player" type class_ref 129666 // Player
+	  param inout name "dealer" type class_ref 129026 // Dealer
+	  param inout name "deck" type class_ref 129154 // Deck
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param player
+@param dealer
+@param deck"
+      end
+
+      operation 134018 "startRound"
+	public explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134146 "firstBetChoice"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param player"
+      end
+
+      operation 134274 "otherBetChoices"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	comment "@param player
+@param deck"
+      end
+
+      operation 134402 "cardChoice"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134530 "busting"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134658 "win"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134786 "tryAgain"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 134914 "displayRound"
+	private explicit_return_type "void"
+	nparams 0
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    class 129922 "Test"
+      visibility public 
+      cpp_decl ""
+      java_decl "${comment}${@}${visibility}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      
+      classrelation 129922 // <generalisation>
+	relation 129922 ---|>
+	  a public
+	    java "${type}"
+	    classrelation_ref 129922 // <generalisation>
+	  b parent class_ref 130050 // TestCase
+      end
+
+      operation 135170 "Test"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "name" explicit_type "String"
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${synchronized}${name}${(}${t0} ${p0}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135298 "testBudget"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135426 "testAce"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 2
+	  exception class_ref 128898 // CardsValueNotEqual
+	  exception class_ref 128386 // BudgetNotEnoughException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135554 "testCardsValueEqual"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129410 // InvalidAceException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135682 "testHit"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 128002 // AlreadyHitException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+
+      operation 135810 "testChoix"
+	public explicit_return_type "void"
+	nparams 0
+	nexceptions 1
+	  exception class_ref 129538 // InvalideChoiceException
+	
+	preserve_java_body_indent java_def "  ${comment}${@}${visibility}${final}${static}${abstract}${synchronized}${type} ${name}${(}${)}${throws}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+      end
+    end
+
+    classdiagram 128002 "BlackJack"
+      draw_all_relations no hide_attributes no hide_operations no hide_getset_operations no show_members_full_definition default show_members_visibility yes show_members_stereotype yes show_members_context default show_members_multiplicity yes show_members_initialization yes show_attribute_modifiers yes member_max_width 0 show_parameter_dir yes show_parameter_name yes package_name_in_tab yes class_drawing_mode default drawing_language default show_context_mode default auto_label_position default show_relation_modifiers yes show_relation_visibility yes show_infonote default shadow default show_stereotype_properties yes
+      size A4
+    end
+  end
+
+  deploymentview 128002 "blackjack"
+    //deployment diagram settings
+    package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+    draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+    artifact 128002 "AlreadyHitException"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128002 // AlreadyHitException
+      end
+    end
+
+    artifact 128130 "BlackjackLauncher"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import javax.swing.SwingUtilities;
+import fr.iutvalence.java.projet.blackjackHCI.DisplayTask;
+${definition}"
+      associated_classes
+	class_ref 128258 // BlackjackLauncher
+      end
+    end
+
+    artifact 128258 "BudgetNotEnoughException"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128386 // BudgetNotEnoughException
+      end
+    end
+
+    artifact 128386 "Card"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128514 // Card
+      end
+    end
+
+    artifact 128514 "CardsValueNotEqual"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128898 // CardsValueNotEqual
+      end
+    end
+
+    artifact 128642 "Dealer"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.LinkedList;
+import java.util.List;
+${definition}"
+      associated_classes
+	class_ref 129026 // Dealer
+      end
+    end
+
+    artifact 128770 "Deck"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+${definition}"
+      associated_classes
+	class_ref 129154 // Deck
+      end
+    end
+
+    artifact 128898 "Hand"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.LinkedList;
+import java.util.List;
+${definition}"
+      associated_classes
+	class_ref 129282 // Hand
+      end
+    end
+
+    artifact 129026 "InvalidAceException"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 129410 // InvalidAceException
+      end
+    end
+
+    artifact 129154 "InvalideChoiceException"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 129538 // InvalideChoiceException
+      end
+    end
+
+    artifact 129282 "Player"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 129666 // Player
+      end
+    end
+
+    artifact 129410 "Rank"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128770 // Rank
+      end
+    end
+
+    artifact 129538 "Round"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import java.util.InputMismatchException;
+import java.util.Scanner;
+${definition}"
+      associated_classes
+	class_ref 129794 // Round
+      end
+    end
+
+    artifact 129666 "Suit"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+${definition}"
+      associated_classes
+	class_ref 128642 // Suit
+      end
+    end
+
+    artifact 129794 "Test"
+      stereotype "source"
+      java_src "${comment}
+${package}
+${imports}
+import junit.framework.*;
+${definition}"
+      associated_classes
+	class_ref 129922 // Test
+      end
+    end
+
+    deploymentdiagram 128130 "IHM"
+      package_name_in_tab default show_context default write_horizontally default auto_label_position default draw_all_relations default shadow default
+      draw_component_as_icon default show_component_req_prov default show_component_rea default show_stereotype_properties default
+      size A4
+    end
+  end
+end

@@ -1,0 +1,247 @@
+class Round
+!!!133890.java!!!	Round(inout player : Player, inout dealer : Dealer, inout deck : Deck)
+		this.player = player;
+		this.dealer = dealer;
+		this.deck = deck;
+!!!134018.java!!!	startRound() : void
+		player.resetHand();
+		dealer.resetHand();
+		firstBetChoice();
+		otherBetChoices();
+		this.dealer.hit(this.deck);
+		cardChoice();
+		while (this.dealer.reckonScore() <= 16)
+			this.dealer.hit(this.deck);
+		if (this.dealer.reckonScore() > 21)
+		{
+			System.out.println("Dealer is going bust !");
+			win();
+		}
+		else if (this.player.reckonScore() > this.dealer.reckonScore()) 
+			win();
+		else if (this.player.reckonScore() == this.dealer.reckonScore())
+		{
+			/* TODO egalite */
+			System.out.println("Egalité");
+		}
+		else
+			busting();
+!!!134146.java!!!	firstBetChoice() : void
+		displayRound();
+		System.out.println("What do you want :\n");
+		System.out.println("1 : Bet 1\n");
+		System.out.println("2 : Bet 5\n");
+		System.out.println("3 : Bet 25\n");
+		System.out.println("4 : Bet 100\n");
+		System.out.println("5 : Bet 500\n");
+		Scanner ChoiceScan = new Scanner(System.in);
+		int Choice = 0;
+		try
+		{
+			Choice = ChoiceScan.nextInt();
+		} catch (InputMismatchException e)
+		{
+		}
+		switch (Choice)
+		{
+			case 1:
+				try
+				{
+					this.player.setBetOne();
+				} catch (BudgetNotEnoughException e2)
+				{
+					e2.printStackTrace();
+				}
+				break;
+			case 2:
+				try
+				{
+					this.player.setBetFive();
+				} catch (BudgetNotEnoughException e2)
+				{
+					e2.printStackTrace();
+				}
+				break;
+			case 3:
+				try
+				{
+					this.player.setBetTwentyFive();
+				} catch (BudgetNotEnoughException e2)
+				{
+					e2.printStackTrace();
+				}
+				break;
+			case 4:
+				try
+				{
+					this.player.setBetOneHundred();
+				} catch (BudgetNotEnoughException e2)
+				{
+					e2.printStackTrace();
+				}
+				break;
+			case 5:
+				try
+				{
+					this.player.setBetFiveHundred();
+				} catch (BudgetNotEnoughException e2)
+				{
+					e2.printStackTrace();
+				}
+				break;
+			default:
+				System.out.println("You must type a number between 1 and 5");
+				firstBetChoice();
+		};
+!!!134274.java!!!	otherBetChoices() : void
+		while(true)
+		{
+			displayRound();
+			System.out.println("What do you want :\n");
+			System.out.println("1 : Bet 1\n");
+			System.out.println("2 : Bet 5\n");
+			System.out.println("3 : Bet 25\n");
+			System.out.println("4 : Bet 100\n");
+			System.out.println("5 : Bet 500\n");
+			System.out.println("6 : Deal\n");
+			Scanner choiceScan = new Scanner(System.in);
+			int choice = 0;
+			try
+			{
+				choice = choiceScan.nextInt();
+			} catch (InputMismatchException e)
+			{
+			}
+			switch (choice)
+			{
+				case 1:
+					try
+					{
+						this.player.setBetOne();
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+					}
+					break;
+				case 2:
+					try
+					{
+						this.player.setBetFive();
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+					}
+					break;
+				case 3:
+					try
+					{
+						this.player.setBetTwentyFive();
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+					}
+					break;
+				case 4:
+					try
+					{
+						this.player.setBetOneHundred();
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+					}
+					break;
+				case 5:
+					try
+					{
+						this.player.setBetFiveHundred();
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+					}
+					break;
+				case 6:
+					this.player.deal(deck);
+					break;
+				default:
+					System.out.println("You must type a number between 1 and 6");
+					otherBetChoices();
+			}
+			if (choice == 6)
+				break;
+		}
+!!!134402.java!!!	cardChoice() : void
+		while(true)
+		{
+			displayRound();
+			System.out.println("What do you want :\n");
+			System.out.println("1 : Stand\n");
+			System.out.println("2 : Hit\n");
+			System.out.println("3 : Double");
+			Scanner choiceScan = new Scanner(System.in);
+			int choice = 0;
+			try
+			{
+				choice = choiceScan.nextInt();
+			} catch (InputMismatchException e)
+			{
+			}
+			switch (choice)
+			{
+				case 1:
+					break;
+				case 2:
+					this.player.hit(deck);
+					break;
+				case 3:
+					try
+					{
+						this.player.doubleDown(deck);
+					} catch (BudgetNotEnoughException e2)
+					{
+						e2.printStackTrace();
+						cardChoice();
+					}
+					break;
+				default:
+					System.out.println("You must type a number between 1 and 3");
+					cardChoice();
+			}
+			if (this.player.reckonScore() > 21)
+			{
+				busting();
+				return;
+			}
+			if ((choice == 1 || choice == 3))
+			{
+				break;
+			}
+		}
+!!!134530.java!!!	busting() : void
+		displayRound();
+		System.out.println("You are going bust !");
+		this.player.resetBet();
+		tryAgain();
+!!!134658.java!!!	win() : void
+		displayRound();
+		System.out.println("Winner, winner, chicken dinner");
+		this.player.setBudget(player.getBet()*2);
+		this.player.resetBet();
+		tryAgain();
+!!!134786.java!!!	tryAgain() : void
+		System.out.println("Try again ?");
+		System.out.println("1 : YES\n2 : NO");
+		Scanner choiceScan = new Scanner(System.in);
+		int choice = 0;
+		try
+		{
+			choice = choiceScan.nextInt();
+		} catch (InputMismatchException e)
+		{
+		}
+		if (choice == 1)
+			startRound();
+		else
+			System.exit(0);
+!!!134914.java!!!	displayRound() : void
+		System.out.println(this.player+"\n");
+		System.out.println(this.dealer);

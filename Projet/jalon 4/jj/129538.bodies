@@ -1,0 +1,3 @@
+class InvalideChoiceException
+!!!131202.java!!!	InvalideChoiceException(in message : String)
+		super(message);

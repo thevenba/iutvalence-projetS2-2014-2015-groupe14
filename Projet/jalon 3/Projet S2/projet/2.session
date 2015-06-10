@@ -1,0 +1,8 @@
+window_sizes 1200 896 300 900 682 82
+show_stereotypes
+selected class_ref 128133 // Joueur
+open
+  class_ref 128133 // Joueur
+  class_ref 128261 // Humain
+end
+end

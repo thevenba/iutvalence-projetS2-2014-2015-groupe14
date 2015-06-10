@@ -1,0 +1,7 @@
+class Rank
+!!!133506.java!!!	Rank(in value : int)
+		this.setValue(value);
+!!!133634.java!!!	getValue() : int
+		return this.value;
+!!!133762.java!!!	setValue(in value : int) : void
+		this.value = value;

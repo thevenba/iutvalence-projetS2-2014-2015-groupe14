@@ -1,0 +1,3 @@
+class InvalidAceException
+!!!131074.java!!!	InvalidAceException(in message : String)
+		super(message);

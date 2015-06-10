@@ -1,0 +1,10 @@
+class Card
+!!!128514.java!!!	Card(inout suit : Suit, inout rank : Rank)
+		this.suit = suit;
+		this.rank = rank;
+!!!128642.java!!!	getRank() : Rank
+		return rank;
+!!!128770.java!!!	switchAceValue() : void
+		this.rank.setValue(1);
+!!!128898.java!!!	toString() : String
+		return "Card [suit=" + suit + ", rank=" + rank + "]";

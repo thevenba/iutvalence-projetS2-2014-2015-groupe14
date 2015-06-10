@@ -1,0 +1,14 @@
+window_sizes 1200 896 300 900 682 82
+diagrams
+  active  classdiagram_ref 128002 // Diagramme de classe
+    711 590 100 4 0 0
+end
+show_stereotypes
+selected operation_ref 129026 // doublerMise
+open
+  class_ref 128002 // Joueur
+  class_ref 128130 // Croupier
+  class_ref 128258 // Carte
+  class_ref 128386 // IHM_Joueur
+end
+end

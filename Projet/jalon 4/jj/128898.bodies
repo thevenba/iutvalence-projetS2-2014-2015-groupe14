@@ -1,0 +1,4 @@
+class CardsValueNotEqual
+!!!129026.java!!!	CardsValueNotEqual(in message : String)
+		super(message);
+		// TODO Auto-generated constructor stub

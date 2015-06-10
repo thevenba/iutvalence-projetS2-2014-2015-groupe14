@@ -1,0 +1,30 @@
+class Test
+!!!135170.java!!!	Test(in name : String)
+		super(name);
+!!!135298.java!!!	testBudget() : void
+		Player p1 = new Player();
+		int budget = Player.BUDGET_DEFAULT;
+		p1.setBetFiveHundred();
+		p1.setBetFiveHundred();
+		
+		assertEquals(budget, budget);
+		
+		
+!!!135426.java!!!	testAce() : void
+		Player p2 = new Player();
+		Card c1 = new Card(Suit.CLUBS, Rank.EIGHT);
+		Card c2 = new Card(Suit.DIAMONDS, Rank.EIGHT);
+		p2.getMainHand().getCards().add(new Card(Suit.CLUBS, Rank.EIGHT));
+		p2.getMainHand().getCards().add(new Card(Suit.DIAMONDS, Rank.EIGHT));
+		p2.split();
+		assertEquals(p2.getSubHand().getCards().get(0), c2);
+		assertEquals(p2.getMainHand().getCards().get(0), c1);
+		
+		
+		
+!!!135554.java!!!	testCardsValueEqual() : void
+		
+!!!135682.java!!!	testHit() : void
+		
+!!!135810.java!!!	testChoix() : void
+		

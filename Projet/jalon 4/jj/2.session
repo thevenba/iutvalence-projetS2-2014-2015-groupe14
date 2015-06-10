@@ -1,0 +1,12 @@
+window_sizes 1280 962 300 900 785 35
+diagrams
+  active  classdiagram_ref 128002 // BlackJack
+    974 851 100 4 0 0
+end
+show_stereotypes
+selected 
+  package_ref 128002 // blackjack
+open
+  classview_ref 128002 // blackjack
+end
+end

@@ -1,0 +1,4 @@
+class AlreadyHitException
+!!!128002.java!!!	AlreadyHitException(in message : String)
+		super(message);
+		// TODO Auto-generated constructor stub

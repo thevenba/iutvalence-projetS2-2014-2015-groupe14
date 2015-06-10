@@ -1,0 +1,32 @@
+class Hand
+!!!130050.java!!!	Hand()
+		this.bet = Hand.BET_DEFAULT;
+		this.cards = new LinkedList<>();
+!!!130178.java!!!	getBet() : int
+		return this.bet;
+!!!130306.java!!!	setBet(in bet : int) : void
+		this.bet = bet;
+!!!130434.java!!!	getCards() : Card
+		return cards;
+!!!130562.java!!!	setCards(inout cards : List<Card>) : void
+		this.cards = cards;
+!!!130690.java!!!	removeCard(in index : int) : void
+		this.cards.remove(index);
+!!!130818.java!!!	hit(inout deck : Deck) : void
+		this.cards.add(deck.randomCard());
+!!!130946.java!!!	reckonScore() : int
+		int score = 0;
+		for (int cardIndex = 0; cardIndex < this.cards.size(); cardIndex++)
+			score += this.cards.get(cardIndex).getRank().getValue();
+		if (score > 21)
+			for (final Card card : this.cards)
+				if (card.getRank() == Rank.ACE)
+				{
+					card.switchAceValue();
+					score = 0;
+					for (int cardIndex = 0; cardIndex < this.cards.size(); cardIndex++)
+						score += this.cards.get(cardIndex).getRank().getValue();
+					if (score <= 21)
+						return score;
+				}
+		return score;

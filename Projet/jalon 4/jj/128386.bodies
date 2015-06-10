@@ -1,0 +1,3 @@
+class BudgetNotEnoughException
+!!!128386.java!!!	BudgetNotEnoughException(in message : String)
+		super(message);
