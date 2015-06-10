@@ -209,10 +209,22 @@ public class DisplayTask implements Runnable, ActionListener
 				this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(false);
 				if (score > 21)
 				{
-					JOptionPane.showMessageDialog(window,
-						    "You are going bust !",
-						    "Busting",
-						    JOptionPane.PLAIN_MESSAGE);
+					Object[] choices = {"Next Round", "New Game", "Quit"};
+					String s = (String)JOptionPane.showInputDialog(this.window,
+							"You are going bust !",
+						    "Busting", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
+				    if (s == "Next Round")
+				    {
+				    	this.nextRound();
+				    }
+				    else if (s == "New Game")
+				    {
+				    	this.newGame();
+				    }
+				    else
+				    {
+				    	System.exit(0);
+				    }
 				}
 			}
 			else
@@ -243,37 +255,96 @@ public class DisplayTask implements Runnable, ActionListener
 		}
 		if (this.dealer.getHand().reckonScore() > 21)
 		{
-			JOptionPane.showMessageDialog(window,
-				    "Dealer is going bust !",
-				    "Win",
-				    JOptionPane.PLAIN_MESSAGE);
 			this.player.setBudget(this.player.getMainHand().getBet()*2);
 			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+			Object[] choices = {"Next Round", "New Game", "Quit"};
+			String s = (String)JOptionPane.showInputDialog(this.window,
+					"Dealer is going bust !",
+				    "Win", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
+		    if (s == "Next Round")
+		    {
+		    	this.nextRound();
+		    }
+		    else if (s == "New Game")
+		    {
+		    	this.newGame();
+		    }
+		    else
+		    {
+		    	System.exit(0);
+		    }
 		}
 		else if (this.player.getMainHand().reckonScore() > this.dealer.getHand().reckonScore())
 		{
-			JOptionPane.showMessageDialog(window,
-				    "Winner, winner, chicken dinner",
-				    "Win",
-				    JOptionPane.PLAIN_MESSAGE);
 			this.player.setBudget(this.player.getMainHand().getBet()*2);
 			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+			Object[] choices = {"Next Round", "New Game", "Quit"};
+			String s = (String)JOptionPane.showInputDialog(this.window,
+					"Winner, winner, chicken dinner",
+				    "Win", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
+		    if (s == "Next Round")
+		    {
+		    	this.nextRound();
+		    }
+		    else if (s == "New Game")
+		    {
+		    	this.newGame();
+		    }
+		    else
+		    {
+		    	System.exit(0);
+		    }
 		}
 		else if (this.player.getMainHand().reckonScore() == this.dealer.getHand().reckonScore())
 		{
-			JOptionPane.showMessageDialog(window,
-				    "Push",
-				    "Push",
-				    JOptionPane.PLAIN_MESSAGE);
 			this.player.setBudget(this.player.getMainHand().getBet());
 			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+			Object[] choices = {"Next Round", "New Game", "Quit"};
+			String s = (String)JOptionPane.showInputDialog(this.window,
+					"Push",
+				    "Push", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
+		    if (s == "Next Round")
+		    {
+		    	this.nextRound();
+		    }
+		    else if (s == "New Game")
+		    {
+		    	this.newGame();
+		    }
+		    else
+		    {
+		    	System.exit(0);
+		    }
 		}
 		else
 		{
-			JOptionPane.showMessageDialog(window,
-				    "You are going bust !",
-				    "Busting",
-				    JOptionPane.PLAIN_MESSAGE);
+			Object[] choices = {"Next Round", "New Game", "Quit"};
+			String s = (String)JOptionPane.showInputDialog(this.window,
+					"You are going bust !",
+				    "Busting", JOptionPane.PLAIN_MESSAGE, null, choices, "Next Round");;
+		    if (s == "Next Round")
+		    {
+		    	this.nextRound();
+		    }
+		    else if (s == "New Game")
+		    {
+		    	this.newGame();
+		    }
+		    else
+		    {
+		    	System.exit(0);
+		    }
 		}	
+	}
+	
+	public void nextRound()
+	{
+		this.player.resetHand();
+		this.dealer.resetHand();
+	}
+	
+	public void newGame()
+	{
+		
 	}
 }
