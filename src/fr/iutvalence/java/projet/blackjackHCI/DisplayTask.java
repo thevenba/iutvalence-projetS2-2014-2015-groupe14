@@ -333,7 +333,8 @@ public class DisplayTask implements Runnable, ActionListener
 		    {
 		    	System.exit(0);
 		    }
-		}
+		} 
+		
 		else
 		{
 			Object[] choices = {"Next Round", "New Game", "Quit"};
