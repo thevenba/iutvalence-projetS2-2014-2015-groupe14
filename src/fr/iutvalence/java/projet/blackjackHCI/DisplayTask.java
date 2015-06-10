@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JSplitPane;
 import javax.swing.WindowConstants;
 
+import fr.iutvalence.java.projet.blackjack.AlreadyHitException;
 import fr.iutvalence.java.projet.blackjack.BudgetNotEnoughException;
 import fr.iutvalence.java.projet.blackjack.Dealer;
 import fr.iutvalence.java.projet.blackjack.Deck;
@@ -127,7 +128,10 @@ public class DisplayTask implements Runnable, ActionListener
 				this.player.setBetFiveHundred();
 			} catch (BudgetNotEnoughException e)
 			{
-				// TODO Auto-generated catch block
+				JOptionPane.showMessageDialog(window,
+					    e.toString(),
+					    "Inane warning",
+					    JOptionPane.WARNING_MESSAGE);
 				e.printStackTrace();
 			}
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(true);
@@ -145,6 +149,8 @@ public class DisplayTask implements Runnable, ActionListener
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(true);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getStand().setEnabled(true);
+			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDoubleDown().setEnabled(true);
+			this.player.getMainHand().reckonScore();
 			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 			this.dealerPanel.getDealersCards().refreshDealerHand();
 		}
@@ -180,11 +186,39 @@ public class DisplayTask implements Runnable, ActionListener
 						    "Busting",
 						    JOptionPane.PLAIN_MESSAGE);
 				}
-				
 			}
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getDoubleDown())
 		{
+			if (this.currentHand == this.player.getMainHand())
+			{
+				try
+				{
+					this.player.doubleDownMainHand(this.deck);
+				} catch (AlreadyHitException | BudgetNotEnoughException e)
+				{
+					JOptionPane.showMessageDialog(window,
+						    e.toString(),
+						    "Inane warning",
+						    JOptionPane.WARNING_MESSAGE);
+					e.printStackTrace();
+				}
+				this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+				int score = this.player.getMainHand().reckonScore();
+				this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
+				this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(false);
+				if (score > 21)
+				{
+					JOptionPane.showMessageDialog(window,
+						    "You are going bust !",
+						    "Busting",
+						    JOptionPane.PLAIN_MESSAGE);
+				}
+			}
+			else
+			{
+				/** TODO faire avec deuxieme main */
+			}
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance())
 		{
@@ -196,32 +230,50 @@ public class DisplayTask implements Runnable, ActionListener
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getStand())
 		{
-			while (this.dealer.getHand().reckonScore() <= 16)
-			{
-				this.dealer.getHand().hit(this.deck);
-				this.dealerPanel.getDealersCards().refreshDealerHand();
-			}
-			if (this.dealer.getHand().reckonScore() > 21)
-				JOptionPane.showMessageDialog(window,
-					    "Dealer is going bust !",
-					    "Win",
-					    JOptionPane.PLAIN_MESSAGE);
-			else if (this.player.getMainHand().reckonScore() > this.dealer.getHand().reckonScore())
-				JOptionPane.showMessageDialog(window,
-					    "Winner, winner, chicken dinner",
-					    "Win",
-					    JOptionPane.PLAIN_MESSAGE);
-			else if (this.player.getMainHand().reckonScore() == this.dealer.getHand().reckonScore())
-				JOptionPane.showMessageDialog(window,
-					    "Push",
-					    "Push",
-					    JOptionPane.PLAIN_MESSAGE);
-			else
-				JOptionPane.showMessageDialog(window,
-					    "You are going bust !",
-					    "Busting",
-					    JOptionPane.PLAIN_MESSAGE);
-				
+			this.proceed();
 		}
+	}
+	
+	public void proceed()
+	{
+		while (this.dealer.getHand().reckonScore() <= 16)
+		{
+			this.dealer.getHand().hit(this.deck);
+			this.dealerPanel.getDealersCards().refreshDealerHand();
+		}
+		if (this.dealer.getHand().reckonScore() > 21)
+		{
+			JOptionPane.showMessageDialog(window,
+				    "Dealer is going bust !",
+				    "Win",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.player.setBudget(this.player.getMainHand().getBet()*2);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+		}
+		else if (this.player.getMainHand().reckonScore() > this.dealer.getHand().reckonScore())
+		{
+			JOptionPane.showMessageDialog(window,
+				    "Winner, winner, chicken dinner",
+				    "Win",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.player.setBudget(this.player.getMainHand().getBet()*2);
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+		}
+		else if (this.player.getMainHand().reckonScore() == this.dealer.getHand().reckonScore())
+		{
+			JOptionPane.showMessageDialog(window,
+				    "Push",
+				    "Push",
+				    JOptionPane.PLAIN_MESSAGE);
+			this.player.setBudget(this.player.getMainHand().getBet());
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(window,
+				    "You are going bust !",
+				    "Busting",
+				    JOptionPane.PLAIN_MESSAGE);
+		}	
 	}
 }
