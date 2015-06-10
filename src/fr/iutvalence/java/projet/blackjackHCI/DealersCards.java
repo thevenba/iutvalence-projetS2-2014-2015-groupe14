@@ -32,10 +32,10 @@ public class DealersCards extends JPanel
             this.remove(buttonToDelete);
         }
         List<Card> handToLook;
-        handToLook = this.dealer.getHand();
+        handToLook = this.dealer.getHand().getCards();
  
         for (Card CardToAdd : handToLook) {
-            JButton buttonToAdd = new JButton("" + CardToAdd);
+            JButton buttonToAdd = new JButton("" + CardToAdd.getRank().toString() + " " + CardToAdd.getRank().getValue());
             this.revalidate();
             this.add(buttonToAdd);
             this.hand.add(buttonToAdd);
