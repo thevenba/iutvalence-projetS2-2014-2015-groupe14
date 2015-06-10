@@ -50,4 +50,14 @@ public class DealerPanel extends JPanel
 		bankLabel.setSize(400,200);
 		this.add(this.separator);
 	}
+
+	/**
+	 * @return the dealersCards
+	 */
+	public DealersCards getDealersCards()
+	{
+		return dealersCards;
+	}
+	
+	
 }

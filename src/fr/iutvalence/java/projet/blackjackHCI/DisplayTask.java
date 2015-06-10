@@ -136,6 +136,7 @@ public class DisplayTask implements Runnable, ActionListener
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal())
 		{
 			this.player.deal(deck);
+			this.dealer.getHand().hit(deck);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOne().setEnabled(false);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFive().setEnabled(false);
 			this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetTwentyFive().setEnabled(false);
@@ -144,6 +145,7 @@ public class DisplayTask implements Runnable, ActionListener
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
 			this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(true);
 			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
+			this.dealerPanel.getDealersCards().refreshDealerHand();
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit())
 		{
@@ -169,7 +171,8 @@ public class DisplayTask implements Runnable, ActionListener
 				 * reset l'interface
 				 */
 				this.player.getSubHand().hit(deck);
-				if (this.player.getSubHand().reckonScore() > 21)
+				int score = this.player.getSubHand().reckonScore();
+				if (score > 21)
 				{
 					JOptionPane.showMessageDialog(window,
 						    "You are going bust !",
@@ -192,7 +195,32 @@ public class DisplayTask implements Runnable, ActionListener
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getStand())
 		{
-			
+			while (this.dealer.getHand().reckonScore() <= 16)
+			{
+				this.dealer.getHand().hit(this.deck);
+				this.dealerPanel.getDealersCards().refreshDealerHand();
+			}
+			if (this.dealer.getHand().reckonScore() > 21)
+				JOptionPane.showMessageDialog(window,
+					    "Dealer is going bust !",
+					    "Win",
+					    JOptionPane.PLAIN_MESSAGE);
+			else if (this.player.getMainHand().reckonScore() > this.dealer.getHand().reckonScore())
+				JOptionPane.showMessageDialog(window,
+					    "Winner, winner, chicken dinner",
+					    "Win",
+					    JOptionPane.PLAIN_MESSAGE);
+			else if (this.player.getMainHand().reckonScore() == this.dealer.getHand().reckonScore())
+				JOptionPane.showMessageDialog(window,
+					    "Push",
+					    "Push",
+					    JOptionPane.PLAIN_MESSAGE);
+			else
+				JOptionPane.showMessageDialog(window,
+					    "You are going bust !",
+					    "Busting",
+					    JOptionPane.PLAIN_MESSAGE);
+				
 		}
 	}
 }

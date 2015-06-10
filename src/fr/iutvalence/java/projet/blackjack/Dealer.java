@@ -9,23 +9,18 @@ import java.util.List;
  */
 public class Dealer
 {
-	public List<Card> hand;
+	public Hand hand;
 	
 	public Dealer()
 	{
-		this.hand = new LinkedList<>();
+		this.hand = new Hand();;
 	}
 	
 	public void resetHand()
 	{
-		this.hand = new LinkedList<>();
+		this.hand = new Hand();
 	}
-	
-	public void hit(Deck deck)
-	{
-		this.hand.add(deck.randomCard());
-	}
-	
+		
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -35,7 +30,7 @@ public class Dealer
 		return "Dealer [hand=" + hand + "]";
 	}
 
-	public List<Card> getHand()
+	public Hand getHand()
 	{
 		return this.hand;
 	}
