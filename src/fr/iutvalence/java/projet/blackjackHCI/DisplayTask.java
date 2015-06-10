@@ -153,8 +153,8 @@ public class DisplayTask implements Runnable, ActionListener
 				 * reset l'interface
 				 */
 				this.player.getMainHand().hit(deck);
-				this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 				int score = this.player.getMainHand().reckonScore();
+				this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 				if (score > 21)
 				{
 					JOptionPane.showMessageDialog(window,
