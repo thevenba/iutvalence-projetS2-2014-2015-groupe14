@@ -81,6 +81,7 @@ public class Hand
 				if (card.getRank() == Rank.ACE)
 				{
 					card.switchAceValue();
+					score = 0;
 					for (int cardIndex = 0; cardIndex < this.cards.size(); cardIndex++)
 						score += this.cards.get(cardIndex).getRank().getValue();
 					if (score <= 21)
