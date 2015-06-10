@@ -13,24 +13,21 @@ public class Test extends TestCase {
 		int budget = Player.BUDGET_DEFAULT;
 		p1.setBetFiveHundred();
 		p1.setBetFiveHundred();
+		
 		assertEquals(budget, budget);
 		
 		
 	}
 	
-	public void testChoix() throws InvalideChoiceException {
-		
-	}
-	
 	public void testAce() throws CardsValueNotEqual, BudgetNotEnoughException {
-		//Player p3 = new Player();
-		//Card c1 = new Card(Suit.CLUBS, Rank.EIGHT);
-		//Card c2 = new Card(Suit.DIAMONDS, Rank.EIGHT);
-		//p1.getMainHand().getCards().add(new Card(Suit.CLUBS, Rank.EIGHT));
-		//p1.getMainHand().getCards().add(new Card(Suit.DIAMONDS, Rank.EIGHT));
-		//p1.split();
-		//assertEquals(p1.getSubHand().getCards().get(0), c2);
-		//assertEquals(p1.getMainHand().getCards().get(0), c1);
+		Player p2 = new Player();
+		Card c1 = new Card(Suit.CLUBS, Rank.EIGHT);
+		Card c2 = new Card(Suit.DIAMONDS, Rank.EIGHT);
+		p2.getMainHand().getCards().add(new Card(Suit.CLUBS, Rank.EIGHT));
+		p2.getMainHand().getCards().add(new Card(Suit.DIAMONDS, Rank.EIGHT));
+		p2.split();
+		assertEquals(p2.getSubHand().getCards().get(0), c2);
+		assertEquals(p2.getMainHand().getCards().get(0), c1);
 		
 		
 		
@@ -44,4 +41,7 @@ public class Test extends TestCase {
 		
 	}
 
+	public void testChoix() throws InvalideChoiceException {
+		
+	}
 }
