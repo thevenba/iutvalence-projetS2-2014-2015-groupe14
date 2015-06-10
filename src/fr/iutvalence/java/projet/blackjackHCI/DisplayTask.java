@@ -155,10 +155,10 @@ public class DisplayTask implements Runnable, ActionListener
 			this.dealerPanel.getDealersCards().refreshDealerHand();
 			if (dealer.hand.getCards().size() == 1 )
 			{
-				if (dealer.getHand().reckonScore() == 11)
-				{
+				/*if (dealer.getHand().reckonScore() == 11)
+				{*/
 					this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance().setEnabled(true);
-				}
+				/*}*/
 			}
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit())
@@ -247,7 +247,7 @@ public class DisplayTask implements Runnable, ActionListener
 			{
 				JOptionPane.showMessageDialog(window,
 					    "You can't do that fella !",
-					    "Xrong action",
+					    "Wrong action",
 					    JOptionPane.PLAIN_MESSAGE);
 			}
 			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
