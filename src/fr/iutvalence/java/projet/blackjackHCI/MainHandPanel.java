@@ -43,7 +43,7 @@ public class MainHandPanel extends JPanel
             handToLook = this.player.getSubHand().getCards();
         }
         for (Card CardToAdd : handToLook) {
-            JButton buttonToAdd = new JButton("" + CardToAdd);
+            JButton buttonToAdd = new JButton("" + CardToAdd.getRank().getValue());
             this.revalidate();
             this.add(buttonToAdd);
             this.mainHand.add(buttonToAdd);
