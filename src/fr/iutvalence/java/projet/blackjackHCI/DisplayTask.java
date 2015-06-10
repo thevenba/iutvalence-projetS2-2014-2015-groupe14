@@ -359,6 +359,20 @@ public class DisplayTask implements Runnable, ActionListener
 	{
 		this.player.resetHand();
 		this.dealer.resetHand();
+		this.dealerPanel.getDealersCards().refreshDealerHand();
+		this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+		this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
+		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOne().setEnabled(true);
+		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFive().setEnabled(true);
+		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetTwentyFive().setEnabled(true);
+		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOneHundred().setEnabled(true);
+		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetFiveHundred().setEnabled(true);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit().setEnabled(false);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getDeal().setEnabled(false);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getDoubleDown().setEnabled(false);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getSplit().setEnabled(false);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance().setEnabled(false);
+		this.playerPanel.getPlayerControl().getActionButtonsPanel().getStand().setEnabled(false);
 	}
 	
 	public void newGame()

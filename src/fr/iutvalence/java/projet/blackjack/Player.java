@@ -129,6 +129,7 @@ public class Player
 	public void resetHand()
 	{
 		this.mainHand = new Hand();
+		this.subHand = new Hand();
 	}
 	
 	/**
