@@ -361,7 +361,7 @@ public class DisplayTask implements Runnable, ActionListener
 	{
 		this.player.resetHand();
 		this.dealer.resetHand();
-		this.dealerPanel.getDealersCards().refreshHardDealer();
+		this.dealerPanel.getDealersCards().removeAll();
 		this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
 		this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 		this.playerPanel.getPlayerControl().getBetButtonsPanel().getBetOne().setEnabled(true);

@@ -49,4 +49,14 @@ public class DealersCards extends JPanel
             this.remove(buttonToDelete);
         }
     }
+
+	/**
+	 * @return the hand
+	 */
+	public List<JButton> getHand()
+	{
+		return hand;
+	}
+    
+    
 }
