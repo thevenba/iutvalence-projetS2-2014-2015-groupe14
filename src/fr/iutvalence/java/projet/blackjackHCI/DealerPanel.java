@@ -33,8 +33,6 @@ public class DealerPanel extends JPanel
 	private JLabel bankLabel;
 	private JSplitPane separator;
 	
-	private Dealer dealer;
-	
 	/**
 	 * @param dealer
 	 */
