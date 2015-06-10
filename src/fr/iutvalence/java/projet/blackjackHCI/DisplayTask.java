@@ -153,6 +153,13 @@ public class DisplayTask implements Runnable, ActionListener
 			this.player.getMainHand().reckonScore();
 			this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
 			this.dealerPanel.getDealersCards().refreshDealerHand();
+			if (dealer.hand.getCards().size() == 1 )
+			{
+				if (dealer.getHand().reckonScore() == 11)
+				{
+					this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance().setEnabled(true);
+				}
+			}
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getHit())
 		{
@@ -222,7 +229,18 @@ public class DisplayTask implements Runnable, ActionListener
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getInsurrance())
 		{
-			
+			try{
+				this.player.insurance();
+			}catch(BudgetNotEnoughException e)
+			{
+				JOptionPane.showMessageDialog(window,
+					    "You can't do that fella !",
+					    "Xrong action",
+					    JOptionPane.PLAIN_MESSAGE);
+			}
+			this.playerPanel.getPlayerDisplay().getBetAndBudgetPanel().refresh();
+			this.playerPanel.getPlayerControl().getActionButtonsPanel().getDoubleDown().setEnabled(false);
+
 		}
 		else if (source == this.playerPanel.getPlayerControl().getActionButtonsPanel().getSplit())
 		{
