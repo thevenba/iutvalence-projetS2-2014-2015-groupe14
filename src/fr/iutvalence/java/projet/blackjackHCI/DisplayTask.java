@@ -153,8 +153,9 @@ public class DisplayTask implements Runnable, ActionListener
 				 * reset l'interface
 				 */
 				this.player.getMainHand().hit(deck);
+				int score = this.player.getMainHand().reckonScore();
 				this.playerPanel.getPlayerDisplay().getHandPanel().getMainHandPanel().refreshPlayerMainHand();
-				if (this.player.getMainHand().reckonScore() > 21)
+				if (score > 21)
 				{
 					JOptionPane.showMessageDialog(window,
 						    "You are going bust !",
