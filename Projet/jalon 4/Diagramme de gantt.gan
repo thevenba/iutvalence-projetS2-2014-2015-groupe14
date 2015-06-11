@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="Projet Semestre 2" company="" webLink="http://" view-date="2015-04-13" view-index="0" gantt-divider-location="370" resource-divider-location="300" version="2.0" locale="fr">
+<?xml version="1.0" encoding="UTF-8"?><project name="Projet Semestre 2" company="" webLink="http://" view-date="2015-02-16" view-index="0" gantt-divider-location="311" resource-divider-location="300" version="2.0" locale="fr">
     <description/>
-    <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Nom" width="61" order="0"/>
-        <field id="tpd4" name="Date de début" width="13" order="1"/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Nom" width="60" order="0"/>
+        <field id="tpd4" name="Date de début" width="14" order="1"/>
         <field id="tpd5" name="Date de fin" width="25" order="2"/>
     </view>
     <view id="resource-table">
@@ -35,22 +35,22 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="25" name="Projet BlackJack" color="#8cb6ce" meeting="false" start="2015-02-23" duration="78" complete="38" expand="false">
+        <task id="25" name="Projet BlackJack" color="#8cb6ce" meeting="false" start="2015-02-23" duration="78" complete="38" expand="true">
             <task id="1" name="Choix du sujet" color="#8cb6ce" meeting="false" start="2015-02-23" duration="2" complete="100" expand="true"/>
-            <task id="6" name="Délivrable numéro 1" color="#8cb6ce" meeting="false" start="2015-03-02" duration="10" complete="100" expand="false">
+            <task id="6" name="Délivrable numéro 1" color="#8cb6ce" meeting="false" start="2015-03-02" duration="10" complete="100" expand="true">
                 <task id="15" name="Diagramme des cas d'utilisations" color="#8cb6ce" meeting="false" start="2015-03-02" duration="10" complete="100" expand="true"/>
             </task>
-            <task id="10" name="Délivrable numéro 2" color="#8cb6ce" meeting="false" start="2015-03-13" duration="16" complete="100" expand="false">
+            <task id="10" name="Délivrable numéro 2" color="#8cb6ce" meeting="false" start="2015-03-13" duration="16" complete="100" expand="true">
                 <task id="18" name="Diagramme de séquence" color="#8cb6ce" meeting="false" start="2015-03-13" duration="3" complete="100" expand="true"/>
                 <task id="21" name="Diagrammes de comportement et collaboration" color="#8cb6ce" meeting="false" start="2015-03-23" duration="5" complete="100" expand="true"/>
                 <task id="24" name="Diagramme de composants" color="#8cb6ce" meeting="false" start="2015-04-01" duration="3" complete="100" expand="true"/>
             </task>
-            <task id="42" name="Programation" color="#8cb6ce" meeting="false" start="2015-04-06" duration="47" complete="0" expand="false">
+            <task id="42" name="Programation" color="#8cb6ce" meeting="false" start="2015-04-06" duration="47" complete="0" expand="true">
                 <task id="56" name="Modifications des diagrammes" color="#8cb6ce" meeting="false" start="2015-04-06" duration="18" complete="0" expand="true"/>
-                <task id="46" name="Partie logique" color="#8cb6ce" meeting="false" start="2015-04-30" duration="28" complete="0" expand="false">
-                    <task id="49" name="Création des premières classes" color="#8cb6ce" meeting="false" start="2015-04-30" duration="1" complete="0" expand="true"/>
-                    <task id="63" name="Création de la liste de carte" color="#8cb6ce" meeting="false" start="2015-05-21" duration="1" complete="0" expand="true"/>
-                    <task id="70" name="Ouverture de la bêta" color="#8cb6ce" meeting="false" start="2015-05-25" duration="1" complete="0" expand="true"/>
+                <task id="46" name="Partie logique" color="#8cb6ce" meeting="false" start="2015-04-30" duration="28" complete="0" expand="true">
+                    <task id="49" name="Création des premières classes" color="#8cb6ce" meeting="false" start="2015-04-30" duration="16" complete="0" expand="true"/>
+                    <task id="63" name="Création de la liste de carte" color="#8cb6ce" meeting="false" start="2015-05-21" duration="3" complete="0" expand="true"/>
+                    <task id="70" name="Ouverture de la bêta" color="#8cb6ce" meeting="false" start="2015-05-25" duration="11" complete="0" expand="true"/>
                     <task id="72" name="Création de la classe main et ajout de deux exceptions" color="#8cb6ce" meeting="false" start="2015-06-08" duration="1" complete="0" expand="true"/>
                 </task>
                 <task id="43" name="IHM" color="#8cb6ce" meeting="false" start="2015-06-08" duration="2" complete="0" expand="true"/>
@@ -75,9 +75,9 @@
         <displaycolumn property-id="tpd9" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd8" order="-1" width="75" visible="false"/>
         <displaycolumn property-id="tpd0" order="-1" width="75" visible="false"/>
-        <displaycolumn property-id="tpd3" order="0" width="224" visible="true"/>
-        <displaycolumn property-id="tpd4" order="1" width="49" visible="true"/>
-        <displaycolumn property-id="tpd5" order="2" width="93" visible="true"/>
+        <displaycolumn property-id="tpd3" order="0" width="186" visible="true"/>
+        <displaycolumn property-id="tpd4" order="1" width="43" visible="true"/>
+        <displaycolumn property-id="tpd5" order="2" width="78" visible="true"/>
     </taskdisplaycolumns>
     <previous/>
     <roles roleset-name="Default"/>
