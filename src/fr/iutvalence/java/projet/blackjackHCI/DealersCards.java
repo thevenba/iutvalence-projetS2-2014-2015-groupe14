@@ -20,7 +20,7 @@ import fr.iutvalence.java.projet.blackjack.Hand;
 public class DealersCards extends JPanel
 {
 	private Dealer dealer;
-	private List<JButton> hand;
+	private List<JButton> hand; 
 	
 	public DealersCards(Dealer dealer){
 		this.dealer = dealer;
